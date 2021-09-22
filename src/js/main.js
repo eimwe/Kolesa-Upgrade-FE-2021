@@ -1,5 +1,3 @@
 import '../css/style.css';
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello, Kolesa Upgrade!</h1>
-`;
+document.querySelector('#app').innerHTML = '<h1>Hello, Сергей!</h1>';
