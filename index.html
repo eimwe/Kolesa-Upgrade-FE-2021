@@ -8,78 +8,80 @@
         <title>Каталог</title>
     </head>
     <body>
-        <div class="modal modal--shopitem">
-            <button class="modal__close" type="button">Закрыть</button>
-            <article class="shopitem flex-container">
-                <div class="shopitem__gallery" aria-roledescription="carousel">
-                    <ul class="gallery__fullsize flex-container">
-                        <li class="fullsize__slide" aria-roledescription="slide">
-                            <img src="src/assets/sweatshirt-01.webp" alt="Бежевый свитшот">
-                        </li>
-                        <li class="fullsize__slide active" aria-roledescription="slide">
-                            <img src="src/assets/sweatshirt-02.webp" alt="Свитшот">
-                        </li>
-                        <li class="fullsize__slide" aria-roledescription="slide">
-                            <img src="src/assets/sweatshirt-03.webp" alt="Синий свитшот">
-                        </li>
-                    </ul>
-                    <ul class="gallery__thumbs flex-container">
-                        <li class="thumb" aria-roledescription="thumbnail">
-                            <img src="src/assets/sweatshirt-thumb-01.webp" alt="Миниатюра бежевого свитшота">
-                        </li>
-                        <li class="thumb active" aria-roledescription="thumbnail">
-                            <img src="src/assets/sweatshirt-thumb-02.webp" alt="Миниатюра свитшота">
-                        </li>
-                        <li class="thumb" aria-roledescription="thumbnail">
-                            <img src="src/assets/sweatshirt-thumb-03.webp" alt="Миниатюра синего свитшота">
-                        </li>
-                    </ul>
-                </div>
-                <section class="shopitem__feats">
-                    <h2>Футболка &quot;Эволюционируй или сдохни&quot;</h2>
-                    <span class="feats__price">100 баллов</span>
-                    <div class="feats__userarea">
-                        <button class="btn" type="submit" form="order" value="Submit">Заказать</button>
-                        <div class="userarea__score">
-                            <p class="score__desc">
-                                Твой баланс: <span class="score__amount">3 945 баллов</span>
-                            </p>
+        <div class="overlay flex-container">
+            <div class="modal modal--shopitem">
+                <button class="modal__close" type="button">Закрыть</button>
+                <div class="modal__content flex-container">
+                    <div class="gallery" aria-roledescription="carousel">
+                        <ul class="gallery__fullsize flex-container">
+                            <li class="fullsize__slide" aria-roledescription="slide">
+                                <img src="src/assets/sweatshirt-01.webp" alt="Бежевый свитшот">
+                            </li>
+                            <li class="fullsize__slide active" aria-roledescription="slide">
+                                <img src="src/assets/sweatshirt-02.webp" alt="Свитшот">
+                            </li>
+                            <li class="fullsize__slide" aria-roledescription="slide">
+                                <img src="src/assets/sweatshirt-03.webp" alt="Синий свитшот">
+                            </li>
+                        </ul>
+                        <ul class="gallery__thumbs flex-container">
+                            <li class="thumb" aria-roledescription="thumbnail">
+                                <img src="src/assets/sweatshirt-thumb-01.webp" alt="Миниатюра бежевого свитшота">
+                            </li>
+                            <li class="thumb active" aria-roledescription="thumbnail">
+                                <img src="src/assets/sweatshirt-thumb-02.webp" alt="Миниатюра свитшота">
+                            </li>
+                            <li class="thumb" aria-roledescription="thumbnail">
+                                <img src="src/assets/sweatshirt-thumb-03.webp" alt="Миниатюра синего свитшота">
+                            </li>
+                        </ul>
+                    </div>
+                    <section class="content__feats">
+                        <h2>Футболка &quot;Эволюционируй или сдохни&quot;</h2>
+                        <span class="feats__price">100 баллов</span>
+                        <div class="feats__userarea">
+                            <button class="btn btn--hero" type="submit" form="order" value="Submit">Заказать</button>
+                            <div class="userarea__score">
+                                <p class="score__desc">
+                                    Твой баланс: <span class="score__amount">3 945 баллов</span>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <form id="order" action="#" method="POST">
-                        <fieldset class="colors flex-container">
-                            <legend>Цвета:</legend>
-                            <label>
-                                <input type="radio" name="color" value="blue"> Синий
-                            </label>
-                            <label>
-                                <input type="radio" name="color" value="beige"> Бежевый
-                            </label>
-                            <label>
-                                <input type="radio" name="color" value="grey"> Серый
-                            </label>
-                        </fieldset>
-                        <fieldset class="sizes flex-container">
-                            <legend>Размер:</legend>
-                            <label>
-                                <input type="radio" name="size" value="small"> S
-                            </label>
-                            <label>
-                                <input type="radio" name="size" value="medium"> M
-                            </label>
-                            <label>
-                                <input type="radio" name="size" value="large"> L
-                            </label>
-                        </fieldset>
-                    </form>
-                    <div class="feats__desc">
-                        <dt class="desc__highlight">Детали:</dt>
-                        <dd>Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%</dd>
-                        <dt class="desc__highlight">Как выбрать размер:</dt>
-                        <dd>Написать дяде Рику для уточнения.</dd>
-                    </div>
-                </section>
-            </article>
+                        <form id="order" action="#" method="POST">
+                            <fieldset class="colors flex-container">
+                                <legend>Цвета:</legend>
+                                <label>
+                                    <input type="radio" name="color" value="blue" checked> Синий
+                                </label>
+                                <label>
+                                    <input type="radio" name="color" value="beige"> Бежевый
+                                </label>
+                                <label>
+                                    <input type="radio" name="color" value="grey"> Серый
+                                </label>
+                            </fieldset>
+                            <fieldset class="sizes flex-container">
+                                <legend>Размер:</legend>
+                                <label>
+                                    <input type="radio" name="size" value="small" checked> <abbr title="Small size">S</abbr>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="medium"> <abbr title="Medium size">M</abbr>
+                                </label>
+                                <label>
+                                    <input type="radio" name="size" value="large"> <abbr title="Large size">L</abbr>
+                                </label>
+                            </fieldset>
+                        </form>
+                        <dl class="feats__desc">
+                            <dt class="desc__highlight">Детали:</dt>
+                            <dd>Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%</dd>
+                            <dt class="desc__highlight">Как выбрать размер:</dt>
+                            <dd>Написать дяде Рику для уточнения.</dd>
+                        </dl>
+                    </section>
+                </div>
+            </div>
         </div>
     </body>
 </html>
