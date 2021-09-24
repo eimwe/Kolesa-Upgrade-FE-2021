@@ -1,8 +1,71 @@
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --fs-headings: 20px;
+    --fs-alerts: 16px;
+    --fs-content: 14px;
+    --lh-headings: 32px;
+    --lh-generic: 24px;
+    --dark: #1c1819;
+    --blue: #2a81dd;
+    --grey: #888b94;
+    --radio-checked: #d6ecfb;
+    --radio-outline: rgba(28, 24, 25, 0.1);
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--fs-content);
+    line-height: var(--lh-generic);
+    color: var(--dark);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+h2,
+p,
+dd {
+    margin: 0;
+}
+
+button {
+    display: block;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
