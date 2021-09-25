@@ -50,27 +50,39 @@
                         <form id="order" action="#" method="POST">
                             <fieldset class="colors flex-container">
                                 <legend>Цвета:</legend>
-                                <label>
-                                    <input type="radio" name="color" value="blue" checked> Синий
-                                </label>
-                                <label>
-                                    <input type="radio" name="color" value="beige"> Бежевый
-                                </label>
-                                <label>
-                                    <input type="radio" name="color" value="grey"> Серый
-                                </label>
+                                <div class="radio-button">
+                                    <input type="radio" id="color-blue" name="color" value="blue" checked>
+                                    <label for="color-blue">Синий</label>
+                                </div>
+                                <div class="radio-button">
+                                    <input type="radio" id="color-beige" name="color" value="beige">
+                                    <label for="color-beige">Бежевый</label>
+                                </div>
+                                <div class="radio-button">
+                                    <input type="radio" id="color-grey" name="color" value="grey">
+                                    <label for="color-grey">Серый</label>
+                                </div>
                             </fieldset>
                             <fieldset class="sizes flex-container">
                                 <legend>Размер:</legend>
-                                <label>
-                                    <input type="radio" name="size" value="small" checked> <abbr title="Small size">S</abbr>
-                                </label>
-                                <label>
-                                    <input type="radio" name="size" value="medium"> <abbr title="Medium size">M</abbr>
-                                </label>
-                                <label>
-                                    <input type="radio" name="size" value="large"> <abbr title="Large size">L</abbr>
-                                </label>
+                                <div class="radio-button">
+                                    <input type="radio" id="size-small" name="size" value="small" checked>
+                                    <label for="size-small">
+                                        <abbr title="Small size">S</abbr>
+                                    </label>
+                                </div>
+                                <div class="radio-button">
+                                    <input type="radio" id="size-medium" name="size" value="medium">
+                                    <label for="size-medium">
+                                        <abbr title="Medium size">M</abbr>
+                                    </label>
+                                </div>
+                                <div class="radio-button">
+                                    <input type="radio" id="size-large" name="size" value="large">
+                                    <label for="size-large">
+                                        <abbr title="Large size">L</abbr>
+                                    </label>
+                                </div>
                             </fieldset>
                         </form>
                         <dl class="feats__desc">
