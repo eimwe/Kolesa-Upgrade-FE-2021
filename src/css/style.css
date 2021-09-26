@@ -118,8 +118,9 @@ fieldset {
 }
 
 .modal {
+    position: relative;
     max-width: 1040px;
-    padding: 24px 24px 64px;
+    padding: 56px;
     border-radius: var(--radius-lg);
     background-color: #fff;
     box-shadow: inset 0 0 0 1px var(--outline);
@@ -130,6 +131,9 @@ fieldset {
 }
 
 .modal__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
     width: 32px;
     height: 32px;
     font-size: 0;
@@ -270,7 +274,7 @@ input[type='radio']:checked + label {
 */
 
 .content__feats {
-    padding: 0 30px;
+    padding: 8px 0 8px 24px;
 }
 
 .content__feats h2 {
