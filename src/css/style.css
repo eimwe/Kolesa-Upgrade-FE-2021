@@ -155,7 +155,6 @@ fieldset {
 
 .gallery__fullsize {
     flex-wrap: nowrap;
-    padding: 0 15px;
 }
 
 .fullsize__slide img {
@@ -177,14 +176,6 @@ fieldset {
 .thumb {
     margin-top: 8px;
     margin-right: 8px;
-}
-
-.thumb:last-child {
-    margin-right: auto;
-}
-
-.thumb:first-child {
-    margin-left: auto;
 }
 
 .thumb img {
