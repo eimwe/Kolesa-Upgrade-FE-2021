@@ -52,6 +52,43 @@
                     <a class="guide__item guide__item--knowhow" href="rulebook.html" title="Узнать способы получения баллов">Как получить баллы</a>
                     <a class="guide__item guide__item--gift" href="#" title="Перечислить баллы коллеге">Подарить баллы</a>
                 </nav>
+                <div class="shop__display">
+                    <nav class="display__categories" role="tablist" aria-label="Category tabs">
+                        <a class="categories__tab" href="#" title="Посмотреть все товары"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="all-items"
+                            tabindex="0">Все товары
+                        </a>
+                        <a class="categories__tab" href="#" title="Посмотреть одежду"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="clothing"
+                            tabindex="-1">Одежда
+                        </a>
+                        <a class="categories__tab" href="#" title="Посмотреть аксессуары"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="accessories"
+                            tabindex="-1">Аксессуары
+                        </a>
+                    </nav>
+                    <div id="all-items" class="display__items"
+                        role="tabpanel"
+                        aria-live="polite"
+                        tabindex="0">
+                    </div>
+                    <div id="clothing" class="display__items"
+                        role="tabpanel"
+                        aria-live="polite"
+                        tabindex="0" hidden>
+                    </div>
+                    <div id="accessories" class="display__items"
+                        role="tabpanel"
+                        aria-live="polite"
+                        tabindex="0" hidden>
+                    </div>
+                </div>
             </div>
         </main>
         <footer>
