@@ -37,154 +37,156 @@
                 </div>
             </div>
         </header>
-        <main class="wrapper">
-            <div class="shop">
-                <picture class="hero__banner">
-                    <source media="(max-width: 600px)" srcset="src/assets/hero-banner-600w.webp">
-                    <img src="src/assets/hero-banner.webp" alt="Летняя распродажа нашего мерча">
-                </picture>
-                <nav class="user__guide" aria-label="Quick user guide">
-                    <a class="guide__item guide__item--add" href="#" title="Зачисление баллов на счет">Получить баллы</a>
-                    <a class="guide__item guide__item--knowhow" href="rulebook.html" title="Узнать способы получения баллов">Как получить баллы</a>
-                    <a class="guide__item guide__item--gift" href="#" title="Перечислить баллы коллеге">Подарить баллы</a>
-                </nav>
-                <div class="shop__display">
-                    <nav class="display__categories" role="tablist" aria-label="Category tabs">
-                        <button class="categories__tab" type="button"
-                            role="tab"
-                            aria-selected="true"
-                            aria-controls="all-items"
-                            tabindex="0">Все товары
-                        </button>
-                        <button class="categories__tab" type="button"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="clothing"
-                            tabindex="-1">Одежда
-                        </button>
-                        <button class="categories__tab" type="button"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="accessories"
-                            tabindex="-1">Аксессуары
-                        </button>
+        <main>
+            <div class="wrapper grid-container">
+                <div class="shop">
+                    <picture class="hero__banner">
+                        <source media="(max-width: 600px)" srcset="src/assets/hero-banner-600w.webp">
+                        <img src="src/assets/hero-banner.webp" alt="Летняя распродажа нашего мерча">
+                    </picture>
+                    <nav class="user__guide" aria-label="Quick user guide">
+                        <a class="guide__item guide__item--add" href="#" title="Зачисление баллов на счет">Получить баллы</a>
+                        <a class="guide__item guide__item--knowhow" href="rulebook.html" title="Узнать способы получения баллов">Как получить баллы</a>
+                        <a class="guide__item guide__item--gift" href="#" title="Перечислить баллы коллеге">Подарить баллы</a>
                     </nav>
-                    <div id="all-items" class="display__items"
-                        role="tabpanel"
-                        aria-live="polite"
-                        tabindex="0">
-                        <div class="items__product">
-                            <div class="product__image">
-                                <img src="src/assets/shirt.webp" alt="Футболка">
-                                <span class="product__tag product__tag--new">New</span>
+                    <div class="shop__display">
+                        <nav class="display__categories" role="tablist" aria-label="Category tabs">
+                            <button class="categories__tab" type="button"
+                                role="tab"
+                                aria-selected="true"
+                                aria-controls="all-items"
+                                tabindex="0">Все товары
+                            </button>
+                            <button class="categories__tab" type="button"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="clothing"
+                                tabindex="-1">Одежда
+                            </button>
+                            <button class="categories__tab" type="button"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="accessories"
+                                tabindex="-1">Аксессуары
+                            </button>
+                        </nav>
+                        <div id="all-items" class="display__items"
+                            role="tabpanel"
+                            aria-live="polite"
+                            tabindex="0">
+                            <div class="items__product">
+                                <div class="product__image">
+                                    <img src="src/assets/shirt.webp" alt="Футболка">
+                                    <span class="product__tag product__tag--new">New</span>
+                                </div>
+                                <article class="product__details">
+                                    <span class="product__price">220 баллов</span>
+                                    <h2 class="product__name">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
+                                    <span class="product__options">
+                                        Размеры <span class="options__variant">S</span>
+                                                <span class="options__variant">M</span>
+                                                <span class="options__variant">L</span>
+                                    </span>
+                                    <button class="btn btn--hero" type="button">Заказать</button>
+                                </article>
                             </div>
-                            <article class="product__details">
-                                <span class="product__price">220 баллов</span>
-                                <h2 class="product__name">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
-                                <span class="product__options">
-                                    Размеры <span class="options__variant">S</span>
-                                            <span class="options__variant">M</span>
-                                            <span class="options__variant">L</span>
-                                </span>
-                                <button class="btn btn--hero" type="button">Заказать</button>
-                            </article>
-                        </div>
-                        <div class="items__product">
-                            <div class="product__image">
-                                <img src="src/assets/shirt.webp" alt="Футболка">
-                                <span class="product__tag product__tag--new">New</span>
+                            <div class="items__product">
+                                <div class="product__image">
+                                    <img src="src/assets/shirt.webp" alt="Футболка">
+                                    <span class="product__tag product__tag--new">New</span>
+                                </div>
+                                <article class="product__details">
+                                    <span class="product__price">220 баллов</span>
+                                    <h2 class="product__name">Свитшот</h2>
+                                    <span class="product__options">
+                                        Размеры <span class="options__variant">S</span>
+                                                <span class="options__variant">M</span>
+                                                <span class="options__variant">L</span>
+                                    </span>
+                                    <button class="btn btn--hero" type="button">Заказать</button>
+                                </article>
                             </div>
-                            <article class="product__details">
-                                <span class="product__price">220 баллов</span>
-                                <h2 class="product__name">Свитшот</h2>
-                                <span class="product__options">
-                                    Размеры <span class="options__variant">S</span>
-                                            <span class="options__variant">M</span>
-                                            <span class="options__variant">L</span>
-                                </span>
-                                <button class="btn btn--hero" type="button">Заказать</button>
-                            </article>
                         </div>
-                    </div>
-                    <div id="clothing" class="display__items"
-                        role="tabpanel"
-                        aria-live="polite"
-                        tabindex="0" hidden>
-                    </div>
-                    <div id="accessories" class="display__items"
-                        role="tabpanel"
-                        aria-live="polite"
-                        tabindex="0" hidden>
+                        <div id="clothing" class="display__items"
+                            role="tabpanel"
+                            aria-live="polite"
+                            tabindex="0" hidden>
+                        </div>
+                        <div id="accessories" class="display__items"
+                            role="tabpanel"
+                            aria-live="polite"
+                            tabindex="0" hidden>
+                        </div>
                     </div>
                 </div>
+                <aside class="sidebar">
+                    <a class="logo" href="index.html" title="На Главную">
+                        Kolesa Group
+                    </a>
+                    <a href="#" title="Перейти в свой профиль">
+                        <figure class="user flex-container">
+                            <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
+                            <figcaption class="user__account">
+                                <p class="account__name account__name--mobile">
+                                    Абдурахман
+                                    <span class="line-break">Калиакпаров</span>
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <nav>
+                        <ul class="navbar">
+                            <li>
+                                <a class="navlink" href="#" title="Ознакомиться с организационной схемой компании">
+                                    Оргсхема
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navlink" href="#" title="Познакомиться с нашей командой">
+                                    Kolesa Team
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navlink navlinl--active" href="#" title="Получить наш мерч">
+                                    Kolesa Shop
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navlink" href="#" title="Узнать больше о компании">
+                                    Картина компании
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navlink" href="#" title="Почитать свежие новости о компании">
+                                    Новости
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navlink" href="#" title="Записаться на курсы">
+                                    Education
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navlink" href="#" title="Сверится с нашими гайдами">
+                                    Guidelines
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navlink" href="#" title="Посмотреть список рекомендованной литературы">
+                                    Библиотека
+                                </a>
+                            </li>
+                            <li>
+                                <a class="navlink" href="#">
+                                    <abbr title="Часто задаваемые вопросы">FAQ</abbr>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <button class="btn btn-logout btn-logout--mobile" type="button">Выйти из профиля</button>
+                </aside>
             </div>
         </main>
-        <aside class="sidebar">
-            <a class="logo" href="index.html" title="На Главную">
-                Kolesa Group
-            </a>
-            <a href="#" title="Перейти в свой профиль">
-                <figure class="user flex-container">
-                    <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
-                    <figcaption class="user__account">
-                        <p class="account__name account__name--mobile">
-                            Абдурахман
-                            <span class="line-break">Калиакпаров</span>
-                        </p>
-                    </figcaption>
-                </figure>
-            </a>
-            <nav>
-                <ul class="navbar">
-                    <li>
-                        <a class="navlink" href="#" title="Ознакомиться с организационной схемой компании">
-                            Оргсхема
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navlink" href="#" title="Познакомиться с нашей командой">
-                            Kolesa Team
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navlink navlinl--active" href="#" title="Получить наш мерч">
-                            Kolesa Shop
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navlink" href="#" title="Узнать больше о компании">
-                            Картина компании
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navlink" href="#" title="Почитать свежие новости о компании">
-                            Новости
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navlink" href="#" title="Записаться на курсы">
-                            Education
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navlink" href="#" title="Сверится с нашими гайдами">
-                            Guidelines
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navlink" href="#" title="Посмотреть список рекомендованной литературы">
-                            Библиотека
-                        </a>
-                    </li>
-                    <li>
-                        <a class="navlink" href="#">
-                            <abbr title="Часто задаваемые вопросы">FAQ</abbr>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <button class="btn btn-logout btn-logout--mobile" type="button">Выйти из профиля</button>
-        </aside>
         <footer>
             <div class="wrapper flex-container">
                 <div class="about__company">
