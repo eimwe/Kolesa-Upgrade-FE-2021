@@ -1,0 +1,17 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 0.45em 2.65em;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 2px 4px var(--outline);
+
+    &--hero {
+        background-color: var(--blue);
+        color: #fff;
+    }
+}
