@@ -1,0 +1,112 @@
+.menu-btn--mobile,
+.return-btn--mobile {
+    display: none;
+}
+
+header {
+    padding: 32px 0 24px 0;
+
+    & > .flex-container {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 66px;
+
+        & > .flex-container {
+            width: 1036px;
+        }
+    }
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.searcher {
+    position: relative;
+
+    &__field {
+        width: 308px;
+        padding: 8px 0 8px 56px;
+        border: none;
+        border-radius: var(--radius-sm);
+        font-family: inherit;
+        font-size: 18px;
+        line-height: 28px;
+        background-color: #f2f2f3;
+        color: var(--grey);
+        transition: all var(--duration);
+
+        &:focus {
+            background-color: #fff;
+            outline: 1px solid var(--blue);
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 10px;
+        left: 16px;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        border: none;
+        font-size: 0;
+        background-color: transparent;
+        background-image: url('../assets/magnifier.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        transition: all var(--duration);
+
+        &:focus {
+            filter: drop-shadow(2px 2px 2px var(--grey));
+            outline: none;
+        }
+
+        &:active {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.profile {
+    figure {
+        margin: 0;
+    }
+
+    &:hover {
+        .user__avatar {
+            box-shadow: 0 0 0 4px var(--blue);
+        }
+
+        .account__name {
+            color: var(--red);
+        }
+    }
+}
+
+.user {
+    gap: 16px;
+
+    &__avatar {
+        border-radius: 50%;
+        transition: box-shadow var(--duration);
+    }
+}
+
+.account {
+    &__name {
+        font-weight: 600;
+        color: var(--blue);
+        transition: color var(--duration);
+    }
+
+    &__budget {
+        font-size: 13px;
+        line-height: 20px;
+    }
+}

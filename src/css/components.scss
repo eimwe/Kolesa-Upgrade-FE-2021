@@ -5,6 +5,14 @@
     justify-content: space-between;
 }
 
+.logo {
+    display: block;
+    width: 215px;
+    height: 35px;
+    font-size: 0;
+    background: url('../assets/logo.svg') no-repeat;
+}
+
 .btn {
     padding: 0.45em 2.65em;
     border-radius: var(--radius-sm);
