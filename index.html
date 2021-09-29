@@ -5,11 +5,11 @@
         <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
         <link rel="stylesheet" href="/src/css/style.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Каталог</title>
+        <title>Kolesa Shop</title>
     </head>
     <body>
         <header>
-            <div class="wrapper">
+            <div class="wrapper flex-container">
                 <div class="menu-btn--mobile" aria-haspopup="menu">
                     <input type="checkbox" name="mobile-menu" id="toggle-menu">
                     <label for="toggle-menu">Меню</label>
@@ -18,35 +18,31 @@
                 <a class="logo" href="index.html" title="На Главную">
                     Kolesa Group
                 </a>
-                <form id="search" action="#" method="GET">
-                    <div class="searcher">
-                        <input class="searcher__field" type="search" name="search-query" placeholder="Поиск">
-                        <input class="searcher__btn" type="submit" value="Найти">
-                    </div>
-                </form>
-                <figure class="user flex-container">
-                    <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
-                    <figcaption class="user__account">
-                        <p class="account__name">Мортиджан</p>
-                        <span class="account__budget">300 баллов</span>
-                    </figcaption>
-                </figure>
+                <div class="flex-container">
+                    <form id="search" action="#" method="GET">
+                        <div class="searcher">
+                            <input class="searcher__field" type="search" name="search-query" placeholder="Поиск">
+                            <input class="searcher__btn" type="submit" value="Найти">
+                        </div>
+                    </form>
+                    <a href="#" title="Перейти в свой профиль">
+                        <figure class="user flex-container">
+                            <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
+                            <figcaption class="user__account">
+                                <p class="account__name">Мортиджан</p>
+                                <span class="account__budget">300 баллов</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
             </div>
         </header>
         <main class="wrapper">
             <div class="shop">
-                <div class="hero__banner" role="banner">
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="src/assets/hero-banner-600w.webp">
-                        <img src="src/assets/hero-banner.webp" alt="Летняя распродажа нашего мерча">
-                    </picture>
-                    <div class="banner__desc">
-                        <h1 class="desc__heading">Летняя распродажа +50%</h1>
-                        <p class="desc__subheading">
-                            Дедлайн: <time datetime="2021-10-04">понедельник</time>, <time datetime="10:00">10:00</time>
-                        </p>
-                    </div>
-                </div>
+                <picture class="hero__banner">
+                    <source media="(max-width: 600px)" srcset="src/assets/hero-banner-600w.webp">
+                    <img src="src/assets/hero-banner.webp" alt="Летняя распродажа нашего мерча">
+                </picture>
                 <nav class="user__guide" aria-label="Quick user guide">
                     <a class="guide__item guide__item--add" href="#" title="Зачисление баллов на счет">Получить баллы</a>
                     <a class="guide__item guide__item--knowhow" href="rulebook.html" title="Узнать способы получения баллов">Как получить баллы</a>
@@ -54,24 +50,24 @@
                 </nav>
                 <div class="shop__display">
                     <nav class="display__categories" role="tablist" aria-label="Category tabs">
-                        <a class="categories__tab" href="#" title="Посмотреть все товары"
+                        <button class="categories__tab" type="button"
                             role="tab"
                             aria-selected="true"
                             aria-controls="all-items"
                             tabindex="0">Все товары
-                        </a>
-                        <a class="categories__tab" href="#" title="Посмотреть одежду"
+                        </button>
+                        <button class="categories__tab" type="button"
                             role="tab"
                             aria-selected="false"
                             aria-controls="clothing"
                             tabindex="-1">Одежда
-                        </a>
-                        <a class="categories__tab" href="#" title="Посмотреть аксессуары"
+                        </button>
+                        <button class="categories__tab" type="button"
                             role="tab"
                             aria-selected="false"
                             aria-controls="accessories"
                             tabindex="-1">Аксессуары
-                        </a>
+                        </button>
                     </nav>
                     <div id="all-items" class="display__items"
                         role="tabpanel"
