@@ -6,3 +6,66 @@
 @import 'header';
 @import 'footer';
 @import 'sidebar';
+
+.hero__banner {
+    display: block;
+    margin-bottom: 24px;
+}
+
+.user__guide {
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.guide__item {
+    position: relative;
+    width: 330px;
+    padding: 22px 22px 22px 88px;
+    border-radius: var(--radius-lg);
+    font-size: var(--fs-headings);
+    line-height: var(--lh-headings);
+    font-weight: 600;
+    transition: box-shadow var(--duration);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 24px;
+        display: block;
+        width: 48px;
+        height: 56px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &--add {
+        background-color: #eff8eb;
+
+        &::before {
+            background-image: url('../assets/plus-icon.webp');
+        }
+    }
+
+    &--knowhow {
+        background-color: #fffae7;
+
+        &::before {
+            background-image: url('../assets/question-icon.webp');
+        }
+    }
+
+    &--gift {
+        background-color: #e9f2fb;
+
+        &::before {
+            background-image: url('../assets/gift-icon.webp');
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 2px 4px var(--outline);
+    }
+}
