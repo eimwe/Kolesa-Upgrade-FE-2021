@@ -1,0 +1,52 @@
+footer {
+    padding: 20px 0 22px 0;
+    color: #fff;
+    background-color: var(--dark);
+}
+
+.company__copyright {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.socialbar {
+    width: 88px;
+}
+
+.sociallink {
+    display: block;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform var(--duration);
+
+    &--insta {
+        background-image: url('../assets/insta.svg');
+
+        &:hover {
+            @include scaler;
+        }
+    }
+
+    &--yt {
+        background-image: url('../assets/yt.svg');
+
+        &:hover {
+            @include scaler;
+        }
+    }
+
+    &--vk {
+        background-image: url('../assets/vk.svg');
+
+        &:hover {
+            @include scaler;
+        }
+    }
+}
+
+.contacts {
+    gap: 54px;
+}

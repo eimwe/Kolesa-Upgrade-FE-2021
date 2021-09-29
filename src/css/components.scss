@@ -5,6 +5,10 @@
     justify-content: space-between;
 }
 
+.line-break {
+    display: block;
+}
+
 .logo {
     display: block;
     width: 215px;
@@ -21,5 +25,19 @@
     &--hero {
         background-color: var(--blue);
         color: #fff;
+    }
+
+    &--contact {
+        padding-left: 3.05em;
+        padding-right: 3.05em;
+        color: var(--blue);
+        box-shadow: inset 0 0 0 1px rgba(28, 24, 25, 0.1);
+        transition: all var(--duration);
+
+        &:hover {
+            box-shadow: none;
+            color: #fff;
+            background-color: var(--blue);
+        }
     }
 }
