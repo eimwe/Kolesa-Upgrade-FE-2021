@@ -50,26 +50,35 @@
                         <a class="guide__item guide__item--gift" href="#" title="Перечислить баллы коллеге">Подарить баллы</a>
                     </nav>
                     <div class="shop__display">
-                        <nav class="display__categories" role="tablist" aria-label="Category tabs">
-                            <button class="categories__tab" type="button"
-                                role="tab"
-                                aria-selected="true"
-                                aria-controls="all-items"
-                                tabindex="0">Все товары
-                            </button>
-                            <button class="categories__tab" type="button"
-                                role="tab"
-                                aria-selected="false"
-                                aria-controls="clothing"
-                                tabindex="-1">Одежда
-                            </button>
-                            <button class="categories__tab" type="button"
-                                role="tab"
-                                aria-selected="false"
-                                aria-controls="accessories"
-                                tabindex="-1">Аксессуары
-                            </button>
-                        </nav>
+                        <form id="switch-tabs" action="#" method="POST">
+                            <fieldset class="display__categories" role="tablist" aria-label="Category tabs">
+                                <legend>Выберите категорию товаров</legend>
+                                <div class="radio-button categories__tab"
+                                    role="tab"
+                                    aria-selected="true"
+                                    aria-controls="all-items"
+                                    tabindex="0">
+                                    <input type="radio" id="category-all" name="category" value="all" checked>
+                                    <label for="category-all">Все товары</label>
+                                </div>
+                                <div class="radio-button categories__tab"
+                                    role="tab"
+                                    aria-selected="true"
+                                    aria-controls="clothing"
+                                    tabindex="0">
+                                    <input type="radio" id="category-apparel" name="category" value="apparel">
+                                    <label for="category-apparel">Одежда</label>
+                                </div>
+                                <div class="radio-button categories__tab"
+                                    role="tab"
+                                    aria-selected="true"
+                                    aria-controls="accessories"
+                                    tabindex="0">
+                                    <input type="radio" id="category-utensils" name="category" value="utensils">
+                                    <label for="category-utensils">Аксессуары</label>
+                                </div>
+                            </fieldset>
+                        </form>
                         <div id="all-items" class="display__items"
                             role="tabpanel"
                             aria-live="polite"

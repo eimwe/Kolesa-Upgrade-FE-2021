@@ -6,6 +6,7 @@
 @import 'header';
 @import 'footer';
 @import 'sidebar';
+@import 'formgroup';
 
 .hero__banner {
     display: block;
@@ -67,5 +68,20 @@
 
     &:hover {
         box-shadow: 0 2px 4px var(--outline);
+    }
+}
+
+.display__categories legend {
+    @include visually-hidden;
+}
+
+.categories__tab {
+    margin-top: 0;
+    margin-right: 4px;
+
+    label {
+        padding-block: 6px;
+        padding-inline: 1.5em;
+        line-height: 24px;
     }
 }
