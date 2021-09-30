@@ -32,17 +32,17 @@ input[type='search']::-webkit-search-results-decoration {
         width: 308px;
         padding: 8px 0 8px 56px;
         border: none;
-        border-radius: var(--radius-sm);
+        border-radius: $radius-sm;
         font-family: inherit;
         font-size: 18px;
         line-height: 28px;
         background-color: #f2f2f3;
-        color: var(--grey);
-        transition: all var(--duration);
+        color: $grey;
+        transition: all $duration;
 
         &:focus {
             background-color: #fff;
-            outline: 1px solid var(--blue);
+            outline: 1px solid $blue;
         }
     }
 
@@ -60,10 +60,10 @@ input[type='search']::-webkit-search-results-decoration {
         background-repeat: no-repeat;
         background-position: center;
         cursor: pointer;
-        transition: all var(--duration);
+        transition: all $duration;
 
         &:focus {
-            filter: drop-shadow(2px 2px 2px var(--grey));
+            filter: drop-shadow(2px 2px 2px $grey);
             outline: none;
         }
 
@@ -80,11 +80,11 @@ input[type='search']::-webkit-search-results-decoration {
 
     &:hover {
         .user__avatar {
-            box-shadow: 0 0 0 4px var(--blue);
+            box-shadow: 0 0 0 4px $blue;
         }
 
         .account__name {
-            color: var(--red);
+            color: $red;
         }
     }
 }
@@ -94,15 +94,15 @@ input[type='search']::-webkit-search-results-decoration {
 
     &__avatar {
         border-radius: 50%;
-        transition: box-shadow var(--duration);
+        transition: box-shadow $duration;
     }
 }
 
 .account {
     &__name {
         font-weight: 600;
-        color: var(--blue);
-        transition: color var(--duration);
+        color: $blue;
+        transition: color $duration;
     }
 
     &__budget {

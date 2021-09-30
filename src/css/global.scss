@@ -13,9 +13,9 @@ html {
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    font-size: var(--fs-content);
-    line-height: var(--lh-generic);
-    color: var(--dark);
+    font-size: $fs-content;
+    line-height: $lh-generic;
+    color: $dark;
 }
 
 img {

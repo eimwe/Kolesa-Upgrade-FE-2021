@@ -25,11 +25,11 @@
     position: relative;
     width: 330px;
     padding: 22px 22px 22px 88px;
-    border-radius: var(--radius-lg);
-    font-size: var(--fs-headings);
-    line-height: var(--lh-headings);
+    border-radius: $radius-lg;
+    font-size: $fs-headings;
+    line-height: $lh-headings;
     font-weight: 600;
-    transition: box-shadow var(--duration);
+    transition: box-shadow $duration;
 
     &::before {
         content: '';
@@ -68,7 +68,7 @@
     }
 
     &:hover {
-        box-shadow: 0 2px 4px var(--outline);
+        box-shadow: 0 2px 4px $outline;
     }
 }
 

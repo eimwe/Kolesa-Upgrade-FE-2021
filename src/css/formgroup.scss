@@ -14,16 +14,16 @@ fieldset {
 
     label {
         display: block;
-        border-radius: var(--radius-sm);
+        border-radius: $radius-sm;
         line-height: 40px;
         text-align: center;
-        color: var(--blue);
+        color: $blue;
         box-shadow: inset 0 0 0 1px rgba(28, 24, 25, 0.1);
         cursor: pointer;
-        transition: box-shadow var(--duration);
+        transition: box-shadow $duration;
 
         &:hover {
-            box-shadow: inset 0 0 0 1px var(--blue);
+            box-shadow: inset 0 0 0 1px $blue;
         }
     }
 }
@@ -37,8 +37,8 @@ input {
 
         &:checked + label {
             pointer-events: none;
-            color: var(--dark);
-            background-color: var(--radio-checked);
+            color: $dark;
+            background-color: $radio-checked;
             box-shadow: none;
         }
     }

@@ -6,13 +6,13 @@
 
 .navbar {
     width: 150px;
-    font-size: var(--fs-alerts);
+    font-size: $fs-alerts;
 }
 
 .navlink {
     display: block;
     margin-bottom: 26px;
-    transition: color var(--duration);
+    transition: color $duration;
 
     &--active {
         position: relative;
@@ -27,11 +27,11 @@
             width: 4px;
             height: 36px;
             border-radius: 10px;
-            background-color: var(--blue);
+            background-color: $blue;
         }
     }
 
     &:hover {
-        color: var(--blue);
+        color: $blue;
     }
 }
