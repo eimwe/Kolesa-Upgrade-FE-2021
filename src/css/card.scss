@@ -8,6 +8,7 @@
     &__image img {
         width: 330px;
         height: 330px;
+        border-radius: var(--radius-sm);
         object-fit: scale-down;
     }
 
