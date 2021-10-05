@@ -1,6 +1,7 @@
-@import './blocks/logo';
-@import './blocks/user';
-@import './blocks/buttons';
+@import '../blocks/logo';
+@import '../blocks/user';
+@import '../blocks/buttons';
+@import '../helpers/mixins';
 
 .logo--sidebar,
 .user--sidebar,
@@ -39,5 +40,9 @@
             border-radius: 10px;
             background-color: $blue;
         }
+    }
+
+    .accent {
+        @include accent;
     }
 }

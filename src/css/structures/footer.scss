@@ -1,5 +1,6 @@
-@import './blocks/socialbar';
-@import './blocks/buttons';
+@import '../blocks/socialbar';
+@import '../blocks/buttons';
+@import '../helpers/mixins';
 
 .footer {
     padding: 20px 0 22px 0;
@@ -13,5 +14,11 @@
 
     &__contacts {
         gap: 54px;
+    }
+
+    &__invitation {
+        .line-break {
+            @include line-break;
+        }
     }
 }
