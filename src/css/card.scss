@@ -1,8 +1,7 @@
-.card {
-    $root: &;
+@import './blocks/buttons.scss';
 
-    position: relative;
-    width: 330px;
+.card {
+    max-width: 330px;
     border-top-left-radius: $radius-sm;
     border-top-right-radius: $radius-sm;
     background-color: #fff;
@@ -15,57 +14,32 @@
         object-fit: scale-down;
     }
 
+    &__caption {
+        padding: 16px;
+    }
+
+    &__title {
+        margin-bottom: 4px;
+        font-size: $fs-alerts;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
     .btn--hero {
         width: 100%;
         padding-block: 0.45em;
     }
+}
 
-    &--shop {
-        #{$root}__image {
-            position: relative;
-        }
+.card--shop {
+    $root: &;
 
-        #{$root}__action {
-            display: none;
-            position: absolute;
-            bottom: -36px;
-            left: 0;
-            z-index: 1;
-            width: 330px;
-            padding-inline: 16px;
-            padding-bottom: 16px;
-            border-bottom-left-radius: $radius-sm;
-            border-bottom-right-radius: $radius-sm;
-            background-color: #fff;
+    position: relative;
 
-            .btn--hero {
-                margin-top: -16px;
-            }
-        }
-
-        &:hover {
-            #{$root}__action {
-                display: block;
-
-                &::before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    top: -474px;
-                    right: 0;
-                    z-index: -1;
-                    width: 330px;
-                    height: 518px;
-                    padding-bottom: 50px;
-                    border-radius: $radius-sm;
-                    box-shadow: 0 2px 10px rgba(28, 24, 25, 0.1);
-                }
-            }
-
-            #{$root}__price {
-                color: $red;
-            }
-        }
+    .card__image {
+        position: relative;
     }
 
     &__tag {
@@ -78,18 +52,12 @@
         line-height: 20px;
         text-transform: uppercase;
         color: #fff;
-
-        &--new {
-            background-color: #64bd38;
-        }
     }
 
-    &__caption {
-        padding: 16px;
+    &__tag--new {
+        background-color: #64bd38;
     }
-}
 
-.caption {
     &__price {
         display: block;
         margin-bottom: 8px;
@@ -99,28 +67,61 @@
         color: $blue;
     }
 
-    &__title {
-        margin-bottom: 4px;
-        font-size: $fs-alerts;
-        font-weight: 600;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-
     &__options {
         display: block;
         color: $grey;
         margin-bottom: 16px;
+
+        ::after {
+            content: ' /';
+        }
+
+        :last-child {
+            &::after {
+                content: '';
+            }
+        }
     }
-}
 
-.options__variant::after {
-    content: ' /';
-}
+    .card__action {
+        display: none;
+        position: absolute;
+        bottom: -36px;
+        left: 0;
+        z-index: 1;
+        min-width: 330px;
+        padding-inline: 16px;
+        padding-bottom: 16px;
+        border-bottom-left-radius: $radius-sm;
+        border-bottom-right-radius: $radius-sm;
+        background-color: #fff;
+    }
 
-.options__variant:last-child {
-    &::after {
-        content: '';
+    .btn--hero {
+        margin-top: -16px;
+    }
+
+    &:hover {
+        #{$root}__price {
+            color: $red;
+        }
+
+        .card__action {
+            display: block;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: -474px;
+                right: 0;
+                z-index: -1;
+                width: 330px;
+                height: 518px;
+                padding-bottom: 50px;
+                border-radius: $radius-sm;
+                box-shadow: 0 2px 10px rgba(28, 24, 25, 0.1);
+            }
+        }
     }
 }
