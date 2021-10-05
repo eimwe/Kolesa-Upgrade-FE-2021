@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
+        <link rel="stylesheet" href="/src/css/modal-order.scss" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Каталог</title>
+    </head>
+    <body>
+        <div class="overlay flex-container">
+            <div class="modal modal--shopitem">
+                <button class="modal__close" type="button">Закрыть</button>
+                <div class="modal__content flex-container">
+                    <div class="gallery" aria-roledescription="carousel">
+                        <ul class="gallery__fullsize flex-container">
+                            <li class="fullsize__slide" aria-roledescription="slide">
+                                <img src="src/assets/sweatshirt-01.webp" alt="Бежевый свитшот">
+                            </li>
+                            <li class="fullsize__slide active" aria-roledescription="slide">
+                                <img src="src/assets/sweatshirt-02.webp" alt="Свитшот">
+                            </li>
+                            <li class="fullsize__slide" aria-roledescription="slide">
+                                <img src="src/assets/sweatshirt-03.webp" alt="Синий свитшот">
+                            </li>
+                        </ul>
+                        <ul class="gallery__thumbs flex-container">
+                            <li class="thumb" aria-roledescription="thumbnail">
+                                <img src="src/assets/sweatshirt-thumb-01.webp" alt="Миниатюра бежевого свитшота">
+                            </li>
+                            <li class="thumb active" aria-roledescription="thumbnail">
+                                <img src="src/assets/sweatshirt-thumb-02.webp" alt="Миниатюра свитшота">
+                            </li>
+                            <li class="thumb" aria-roledescription="thumbnail">
+                                <img src="src/assets/sweatshirt-thumb-03.webp" alt="Миниатюра синего свитшота">
+                            </li>
+                        </ul>
+                    </div>
+                    <section class="content__feats">
+                        <h2>Футболка &quot;Эволюционируй или сдохни&quot;</h2>
+                        <span class="feats__price">100 баллов</span>
+                        <div class="feats__userarea  flex-container">
+                            <button class="btn btn--hero" type="submit" form="order" value="Submit">Заказать</button>
+                            <div class="userarea__score">
+                                <p class="score__desc">
+                                    Твой баланс: <span class="score__amount">3 945 баллов</span>
+                                </p>
+                            </div>
+                        </div>
+                        <form id="order" action="#" method="POST">
+                            <fieldset class="formgroup colors">
+                                <legend>Цвета:</legend>
+                                <div class="formgroup__btn">
+                                    <input class="formgroup__input--radio" type="radio" id="color-blue" name="color" value="blue" checked>
+                                    <label class="formgroup__label" for="color-blue">Синий</label>
+                                </div>
+                                <div class="formgroup__btn">
+                                    <input class="formgroup__input--radio" type="radio" id="color-beige" name="color" value="beige">
+                                    <label class="formgroup__label" for="color-beige">Бежевый</label>
+                                </div>
+                                <div class="formgroup__btn">
+                                    <input class="formgroup__input--radio" type="radio" id="color-grey" name="color" value="grey">
+                                    <label class="formgroup__label" for="color-grey">Серый</label>
+                                </div>
+                            </fieldset>
+                            <fieldset class="formgroup sizes">
+                                <legend>Размер:</legend>
+                                <div class="formgroup__btn">
+                                    <input class="formgroup__input--radio" type="radio" id="size-small" name="size" value="small" checked>
+                                    <label class="formgroup__label" for="size-small">
+                                        <abbr title="Small size">S</abbr>
+                                    </label>
+                                </div>
+                                <div class="formgroup__btn">
+                                    <input class="formgroup__input--radio" type="radio" id="size-medium" name="size" value="medium">
+                                    <label class="formgroup__label" for="size-medium">
+                                        <abbr title="Medium size">M</abbr>
+                                    </label>
+                                </div>
+                                <div class="formgroup__btn">
+                                    <input class="formgroup__input--radio" type="radio" id="size-large" name="size" value="large">
+                                    <label class="formgroup__label" for="size-large">
+                                        <abbr title="Large size">L</abbr>
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <dl class="feats__desc">
+                            <dt class="desc__highlight">Детали:</dt>
+                            <dd>Брендированная толстовка от Qazaq Republic. Материал: Хлопок 80%, Вискоза 20%</dd>
+                            <dt class="desc__highlight">Как выбрать размер:</dt>
+                            <dd>Написать дяде Рику для уточнения.</dd>
+                        </dl>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="./src/js/order.js"></script>
+    </body>
+</html>
