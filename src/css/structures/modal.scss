@@ -1,3 +1,5 @@
+@import '../helpers/mixins';
+
 .modal {
     position: relative;
     max-width: 1040px;
@@ -9,6 +11,70 @@
     &__content {
         flex-wrap: nowrap;
         gap: 24px;
+    }
+
+    &__desc {
+        padding: 8px 0;
+    }
+
+    &__price {
+        font-size: $fs-headings;
+        line-height: $lh-headings;
+        font-weight: 600;
+    }
+
+    &__user {
+        align-items: flex-end;
+        transform: translateY(-25px);
+    }
+
+    &__score {
+        min-width: 196px;
+        min-height: 68px;
+        padding: 8px 16px;
+        border-radius: $radius-lg;
+        background-color: #f0fafd;
+    }
+
+    &__amount {
+        height: 52px;
+        color: $grey;
+
+        &::after {
+            content: '🛍️';
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin-left: auto;
+            font-size: 0;
+            background: url('../assets/bags.png') no-repeat;
+            background-size: cover;
+            transform: translateY(-45px);
+        }
+    }
+
+    &__budget {
+        @include line-break;
+
+        font-size: $fs-alerts;
+        color: $dark;
+    }
+
+    &__highlights,
+    &__details {
+        margin: 0;
+    }
+
+    &__highlight {
+        margin-top: 24px;
+        font-weight: 600;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        font-size: $fs-headings;
+        line-height: $lh-headings;
+        font-weight: 400;
     }
 
     &__close {
@@ -23,5 +89,10 @@
         background-image: url('../assets/close-btn.svg');
         background-repeat: no-repeat;
         background-position: 50% 50%;
+        transition: transform $duration;
+
+        &:hover {
+            @include scaler;
+        }
     }
 }
