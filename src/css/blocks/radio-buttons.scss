@@ -19,6 +19,10 @@
         margin-right: 4px;
     }
 
+    &--sizes {
+        margin-top: 24px;
+    }
+
     &__label {
         display: block;
         border-radius: $radius-sm;
@@ -38,6 +42,37 @@
         padding-block: 6px;
         padding-inline: 1.5em;
         line-height: 24px;
+    }
+
+    &__label--sizes {
+        width: 40px;
+    }
+
+    &__label--colors {
+        padding: 0 12px 0 8px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 23px;
+            height: 24px;
+            margin-right: 8px;
+            margin-bottom: 2px;
+            vertical-align: middle;
+            border-radius: 4px;
+        }
+
+        &[for='color-blue']::before {
+            background-color: #00458a;
+        }
+
+        &[for='color-beige']::before {
+            background-color: #efe8d8;
+        }
+
+        &[for='color-grey']::before {
+            background-color: #d4d4da;
+        }
     }
 
     &__input--radio {

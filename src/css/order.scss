@@ -8,49 +8,8 @@
 
 /**
 Содержание:
-1. Стили для галереи
-2. Стили для элементов формы
 3. Стили для контента модального окна
 */
-
-/* 2. Стили для элементов формы */
-
-.sizes {
-    margin-top: 24px;
-
-    .radio-button label {
-        width: 40px;
-    }
-}
-
-.colors .radio-button label {
-    padding: 0 12px 0 8px;
-
-    &::before {
-        content: '';
-        display: inline-block;
-        width: 23px;
-        height: 24px;
-        margin-right: 8px;
-        margin-bottom: 2px;
-        vertical-align: middle;
-        border-radius: 4px;
-    }
-}
-
-label {
-    &[for='color-blue']::before {
-        background-color: #00458a;
-    }
-
-    &[for='color-beige']::before {
-        background-color: #efe8d8;
-    }
-
-    &[for='color-grey']::before {
-        background-color: #d4d4da;
-    }
-}
 
 /* 3. Стили для контента модального окна */
 dd,
