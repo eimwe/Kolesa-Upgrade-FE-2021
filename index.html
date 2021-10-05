@@ -8,8 +8,8 @@
         <title>Kolesa Shop</title>
     </head>
     <body>
-        <header>
-            <div class="wrapper flex-container">
+        <header class="header">
+            <div class="header__container wrapper flex-container">
                 <div class="menu-btn--mobile" aria-haspopup="menu">
                     <input type="checkbox" name="mobile-menu" id="toggle-menu">
                     <label for="toggle-menu">Меню</label>
@@ -18,19 +18,19 @@
                 <a class="logo" href="index.html" title="На Главную">
                     Kolesa Group
                 </a>
-                <div class="flex-container">
+                <div class="header__container--inner flex-container">
                     <form id="search" action="#" method="GET">
                         <div class="searcher">
                             <input class="searcher__field" type="search" name="search-query" placeholder="Поиск">
                             <input class="searcher__btn" type="submit" value="Найти">
                         </div>
                     </form>
-                    <a class="profile" href="#" title="Перейти в свой профиль">
-                        <figure class="user flex-container">
+                    <a class="user" href="#" title="Перейти в свой профиль">
+                        <figure class="user__profile flex-container">
                             <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
                             <figcaption class="user__account">
-                                <p class="account__name">Мортиджан</p>
-                                <span class="account__budget">300 баллов</span>
+                                <p class="user__name">Мортиджан</p>
+                                <span class="user__budget">300 баллов</span>
                             </figcaption>
                         </figure>
                     </a>
