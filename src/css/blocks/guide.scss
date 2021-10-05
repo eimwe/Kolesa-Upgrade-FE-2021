@@ -1,0 +1,57 @@
+.guide {
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+
+    &__line {
+        position: relative;
+        width: 330px;
+        padding: 22px 22px 22px 88px;
+        margin-bottom: 40px;
+        border-radius: $radius-lg;
+        font-size: $fs-headings;
+        line-height: $lh-headings;
+        font-weight: 600;
+        transition: box-shadow $duration;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 24px;
+            display: block;
+            width: 48px;
+            height: 56px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &:hover {
+            box-shadow: 0 2px 4px $outline;
+        }
+    }
+
+    &__line--add {
+        background-color: #eff8eb;
+
+        &::before {
+            background-image: url('../assets/plus-icon.webp');
+        }
+    }
+
+    &__line--knowhow {
+        background-color: #fffae7;
+
+        &::before {
+            background-image: url('../assets/question-icon.webp');
+        }
+    }
+
+    &__line--gift {
+        background-color: #e9f2fb;
+
+        &::before {
+            background-image: url('../assets/gift-icon.webp');
+        }
+    }
+}

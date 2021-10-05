@@ -37,49 +37,55 @@
                 </div>
             </div>
         </header>
-        <main>
+        <main class="main">
             <div class="wrapper grid-container">
-                <div class="shop">
-                    <picture class="hero__banner">
+                <div class="main__container">
+                    <picture class="banner">
                         <source media="(max-width: 600px)" srcset="src/assets/hero-banner-600w.webp">
                         <img src="src/assets/hero-banner.webp" alt="Летняя распродажа нашего мерча">
                     </picture>
-                    <nav class="user__guide" aria-label="Quick user guide">
-                        <a class="guide__item guide__item--add" href="#" title="Зачисление баллов на счет">Получить баллы</a>
-                        <a class="guide__item guide__item--knowhow" href="rulebook.html" title="Узнать способы получения баллов">Как получить баллы</a>
-                        <a class="guide__item guide__item--gift" href="#" title="Перечислить баллы коллеге">Подарить баллы</a>
+                    <nav class="guide" aria-label="Quick user guide">
+                        <a class="guide__line guide__line--add" href="#" title="Зачисление баллов на счет">
+                            Получить баллы
+                        </a>
+                        <a class="guide__line guide__line--knowhow" href="rulebook.html" title="Узнать способы получения баллов">
+                            Как получить баллы
+                        </a>
+                        <a class="guide__line guide__line--gift" href="#" title="Перечислить баллы коллеге">
+                            Подарить баллы
+                        </a>
                     </nav>
-                    <div class="shop__display">
+                    <div class="main__stack">
                         <form id="switch-tabs" action="#" method="POST">
-                            <fieldset class="display__categories" role="tablist" aria-label="Category tabs">
-                                <legend>Выберите категорию товаров</legend>
-                                <div class="radio-button categories__tab"
+                            <fieldset class="formgroup" role="tablist" aria-label="Category tabs">
+                                <legend class="formgroup__caption formgroup__caption--catalog">Выберите категорию товаров</legend>
+                                <div class="formgroup__btn formgroup__btn--catalog"
                                     role="tab"
                                     aria-selected="true"
                                     aria-controls="all-items"
                                     tabindex="0">
-                                    <input type="radio" id="category-all" name="category" value="all" checked>
-                                    <label for="category-all">Все товары</label>
+                                    <input class="formgroup__input--radio" type="radio" id="category-all" name="category" value="all" checked>
+                                    <label class="formgroup__label formgroup__label--catalog" for="category-all">Все товары</label>
                                 </div>
-                                <div class="radio-button categories__tab"
+                                <div class="formgroup__btn formgroup__btn--catalog"
                                     role="tab"
                                     aria-selected="true"
                                     aria-controls="clothing"
                                     tabindex="0">
-                                    <input type="radio" id="category-apparel" name="category" value="apparel">
-                                    <label for="category-apparel">Одежда</label>
+                                    <input class="formgroup__input--radio" type="radio" id="category-apparel" name="category" value="apparel">
+                                    <label class="formgroup__label formgroup__label--catalog" for="category-apparel">Одежда</label>
                                 </div>
-                                <div class="radio-button categories__tab"
+                                <div class="formgroup__btn formgroup__btn--catalog"
                                     role="tab"
                                     aria-selected="true"
                                     aria-controls="accessories"
                                     tabindex="0">
-                                    <input type="radio" id="category-utensils" name="category" value="utensils">
-                                    <label for="category-utensils">Аксессуары</label>
+                                    <input class="formgroup__input--radio" type="radio" id="category-utensils" name="category" value="utensils">
+                                    <label class="formgroup__label formgroup__label--catalog" for="category-utensils">Аксессуары</label>
                                 </div>
                             </fieldset>
                         </form>
-                        <div id="all-items" class="display__items"
+                        <div id="all-items" class="main__tiles"
                             role="tabpanel"
                             aria-live="polite"
                             tabindex="0">
@@ -154,12 +160,12 @@
                                 </article>
                             </div>
                         </div>
-                        <div id="clothing" class="display__items"
+                        <div id="clothing" class="main__tiles"
                             role="tabpanel"
                             aria-live="polite"
                             tabindex="0" hidden>
                         </div>
-                        <div id="accessories" class="display__items"
+                        <div id="accessories" class="main__tiles"
                             role="tabpanel"
                             aria-live="polite"
                             tabindex="0" hidden>
