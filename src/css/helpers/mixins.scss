@@ -13,3 +13,13 @@
     white-space: nowrap;
     width: 1px;
 }
+
+/* Перенос строки */
+@mixin line-break {
+    display: block;
+}
+
+/* Выделение текста болдом */
+@mixin accent {
+    font-weight: 600;
+}

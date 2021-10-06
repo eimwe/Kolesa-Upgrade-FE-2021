@@ -1,0 +1,13 @@
+.overlay {
+    justify-content: center;
+    height: 100vh;
+
+    &::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background-color: $dark;
+        opacity: 0.6;
+    }
+}

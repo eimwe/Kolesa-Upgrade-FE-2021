@@ -1,20 +1,28 @@
+@import '../helpers/mixins';
+
 .logo--sidebar,
-.profile--sidebar,
+.user--sidebar,
 .btn--logout--mobile {
     display: none;
 }
 
-.navbar {
-    width: 150px;
-    font-size: $fs-alerts;
-}
+.sidebar {
+    &__navbar {
+        min-width: 150px;
+        font-size: $fs-alerts;
+    }
 
-.navlink {
-    display: block;
-    margin-bottom: 26px;
-    transition: color $duration;
+    &__link {
+        display: block;
+        margin-bottom: 26px;
+        transition: color $duration;
 
-    &--active {
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &__link--active {
         position: relative;
         pointer-events: none;
         font-weight: 600;
@@ -31,7 +39,7 @@
         }
     }
 
-    &:hover {
-        color: $blue;
+    .accent {
+        @include accent;
     }
 }

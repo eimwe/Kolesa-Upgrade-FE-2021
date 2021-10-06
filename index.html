@@ -3,13 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.svg" />
-        <link rel="stylesheet" href="/src/css/catalog.scss" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Kolesa Shop</title>
     </head>
     <body>
-        <header>
-            <div class="wrapper flex-container">
+        <header class="header">
+            <div class="header__container wrapper flex-container">
                 <div class="menu-btn--mobile" aria-haspopup="menu">
                     <input type="checkbox" name="mobile-menu" id="toggle-menu">
                     <label for="toggle-menu">Меню</label>
@@ -18,148 +17,148 @@
                 <a class="logo" href="index.html" title="На Главную">
                     Kolesa Group
                 </a>
-                <div class="flex-container">
+                <div class="header__container--inner flex-container">
                     <form id="search" action="#" method="GET">
                         <div class="searcher">
                             <input class="searcher__field" type="search" name="search-query" placeholder="Поиск">
                             <input class="searcher__btn" type="submit" value="Найти">
                         </div>
                     </form>
-                    <a class="profile" href="#" title="Перейти в свой профиль">
-                        <figure class="user flex-container">
+                    <a class="user" href="#" title="Перейти в свой профиль">
+                        <figure class="user__profile flex-container">
                             <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
                             <figcaption class="user__account">
-                                <p class="account__name">Мортиджан</p>
-                                <span class="account__budget">300 баллов</span>
+                                <p class="user__name">Мортиджан</p>
+                                <span class="user__budget">300 баллов</span>
                             </figcaption>
                         </figure>
                     </a>
                 </div>
             </div>
         </header>
-        <main>
+        <main class="main">
             <div class="wrapper grid-container">
-                <div class="shop">
-                    <picture class="hero__banner">
+                <div class="main__container">
+                    <picture class="banner">
                         <source media="(max-width: 600px)" srcset="src/assets/hero-banner-600w.webp">
-                        <img src="src/assets/hero-banner.webp" alt="Летняя распродажа нашего мерча">
+                        <img class="banner__img" src="src/assets/hero-banner.webp" alt="Летняя распродажа нашего мерча">
                     </picture>
-                    <nav class="user__guide" aria-label="Quick user guide">
-                        <a class="guide__item guide__item--add" href="#" title="Зачисление баллов на счет">Получить баллы</a>
-                        <a class="guide__item guide__item--knowhow" href="rulebook.html" title="Узнать способы получения баллов">Как получить баллы</a>
-                        <a class="guide__item guide__item--gift" href="#" title="Перечислить баллы коллеге">Подарить баллы</a>
+                    <nav class="guide" aria-label="Quick user guide">
+                        <a class="guide__line guide__line--add" href="#" title="Зачисление баллов на счет">
+                            Получить баллы
+                        </a>
+                        <a class="guide__line guide__line--knowhow" href="rulebook.html" title="Узнать способы получения баллов">
+                            Как получить баллы
+                        </a>
+                        <a class="guide__line guide__line--gift" href="#" title="Перечислить баллы коллеге">
+                            Подарить баллы
+                        </a>
                     </nav>
-                    <div class="shop__display">
+                    <div class="main__stack">
                         <form id="switch-tabs" action="#" method="POST">
-                            <fieldset class="display__categories" role="tablist" aria-label="Category tabs">
-                                <legend>Выберите категорию товаров</legend>
-                                <div class="radio-button categories__tab"
+                            <fieldset class="formgroup" role="tablist" aria-label="Category tabs">
+                                <legend class="formgroup__caption formgroup__caption--catalog">Выберите категорию товаров</legend>
+                                <div class="formgroup__btn"
                                     role="tab"
                                     aria-selected="true"
                                     aria-controls="all-items"
                                     tabindex="0">
-                                    <input type="radio" id="category-all" name="category" value="all" checked>
-                                    <label for="category-all">Все товары</label>
+                                    <input class="formgroup__input" type="radio" id="category-all" name="category" value="all" checked>
+                                    <label class="formgroup__label formgroup__label--catalog" for="category-all">Все товары</label>
                                 </div>
-                                <div class="radio-button categories__tab"
+                                <div class="formgroup__btn"
                                     role="tab"
                                     aria-selected="true"
                                     aria-controls="clothing"
                                     tabindex="0">
-                                    <input type="radio" id="category-apparel" name="category" value="apparel">
-                                    <label for="category-apparel">Одежда</label>
+                                    <input class="formgroup__input" type="radio" id="category-apparel" name="category" value="apparel">
+                                    <label class="formgroup__label formgroup__label--catalog" for="category-apparel">Одежда</label>
                                 </div>
-                                <div class="radio-button categories__tab"
+                                <div class="formgroup__btn"
                                     role="tab"
                                     aria-selected="true"
                                     aria-controls="accessories"
                                     tabindex="0">
-                                    <input type="radio" id="category-utensils" name="category" value="utensils">
-                                    <label for="category-utensils">Аксессуары</label>
+                                    <input class="formgroup__input" type="radio" id="category-utensils" name="category" value="utensils">
+                                    <label class="formgroup__label formgroup__label--catalog" for="category-utensils">Аксессуары</label>
                                 </div>
                             </fieldset>
                         </form>
-                        <div id="all-items" class="display__items"
+                        <div id="all-items" class="main__tiles"
                             role="tabpanel"
                             aria-live="polite"
                             tabindex="0">
-                            <div class="card card--shop">
-                                <div class="card__image">
+                            <div class="base-card shop-card">
+                                <div class="shop-card__image">
                                     <img src="src/assets/shirt.webp" alt="Футболка">
-                                    <span class="card__tag card__tag--new">New</span>
+                                    <span class="shop-card__tag shop-card__tag--new">New</span>
                                 </div>
-                                <article class="card__caption">
-                                    <span class="caption__price">220 баллов</span>
-                                    <h2 class="caption__title">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
-                                    <span class="caption__options">
-                                        Размеры <span class="options__variant">S</span>
-                                                <span class="options__variant">M</span>
-                                                <span class="options__variant">L</span>
+                                <article class="base-card__caption">
+                                    <span class="shop-card__price">220 баллов</span>
+                                    <h2 class="base-card__title">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
+                                    <span class="shop-card__options">
+                                        Размеры <span class="shop-card__option">S</span><!--
+                                                --><span class="shop-card__option">M</span><!--
+                                                --><span class="shop-card__option">L</span>
                                     </span>
-                                    <div class="card__action">
+                                    <div class="shop-card__action">
                                         <button class="btn btn--hero" type="button">Заказать</button>
                                     </div>
                                 </article>
                             </div>
-                            <div class="card card--shop">
-                                <div class="card__image">
+                            <div class="base-card shop-card">
+                                <div class="shop-card__image">
                                     <img src="src/assets/sweatshirt-02.webp" alt="Свитшот">
                                 </div>
-                                <article class="card__caption">
-                                    <span class="caption__price">220 баллов</span>
-                                    <h2 class="caption__title">Свитшот</h2>
-                                    <span class="caption__options">
-                                        Размеры <span class="options__variant">S</span>
-                                                <span class="options__variant">M</span>
-                                                <span class="options__variant">L</span>
+                                <article class="base-card__caption">
+                                    <span class="shop-card__price">220 баллов</span>
+                                    <h2 class="base-card__title">Свитшот</h2>
+                                    <span class="shop-card__options">
+                                        Размеры <span class="shop-card__option">S</span><span class="shop-card__option">M</span><span class="shop-card__option">L</span>
                                     </span>
-                                    <div class="card__action">
+                                    <div class="shop-card__action">
                                         <button class="btn btn--hero" type="button">Заказать</button>
                                     </div>
                                 </article>
                             </div>
-                            <div class="card card--shop">
-                                <div class="card__image">
+                            <div class="base-card shop-card">
+                                <div class="shop-card__image">
                                     <img src="src/assets/shirt.webp" alt="Футболка">
                                 </div>
-                                <article class="card__caption">
-                                    <span class="caption__price">220 баллов</span>
-                                    <h2 class="caption__title">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
-                                    <span class="caption__options">
-                                        Размеры <span class="options__variant">S</span>
-                                                <span class="options__variant">M</span>
-                                                <span class="options__variant">L</span>
+                                <article class="base-card__caption">
+                                    <span class="shop-card__price">220 баллов</span>
+                                    <h2 class="base-card__title">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
+                                    <span class="shop-card__options">
+                                        Размеры <span class="shop-card__option">S</span><span class="shop-card__option">M</span><span class="shop-card__option">L</span>
                                     </span>
-                                    <div class="card__action">
+                                    <div class="shop-card__action">
                                         <button class="btn btn--hero" type="button">Заказать</button>
                                     </div>
                                 </article>
                             </div>
-                            <div class="card card--shop">
-                                <div class="card__image">
+                            <div class="base-card shop-card">
+                                <div class="shop-card__image">
                                     <img src="src/assets/sweatshirt-02.webp" alt="Свитшот">
-                                    <span class="card__tag card__tag--new">New</span>
+                                    <span class="shop-card__tag shop-card__tag--new">New</span>
                                 </div>
-                                <article class="card__caption">
-                                    <span class="caption__price">220 баллов</span>
-                                    <h2 class="caption__title">Свитшот</h2>
-                                    <span class="caption__options">
-                                        Размеры <span class="options__variant">S</span>
-                                                <span class="options__variant">M</span>
-                                                <span class="options__variant">L</span>
+                                <article class="base-card__caption">
+                                    <span class="shop-card__price">220 баллов</span>
+                                    <h2 class="base-card__title">Свитшот</h2>
+                                    <span class="shop-card__options">
+                                        Размеры <span class="shop-card__option">S</span><span class="shop-card__option">M</span><span class="shop-card__option">L</span>
                                     </span>
-                                    <div class="card__action">
+                                    <div class="shop-card__action">
                                         <button class="btn btn--hero" type="button">Заказать</button>
                                     </div>
                                 </article>
                             </div>
                         </div>
-                        <div id="clothing" class="display__items"
+                        <div id="clothing" class="main__tiles"
                             role="tabpanel"
                             aria-live="polite"
                             tabindex="0" hidden>
                         </div>
-                        <div id="accessories" class="display__items"
+                        <div id="accessories" class="main__tiles"
                             role="tabpanel"
                             aria-live="polite"
                             tabindex="0" hidden>
@@ -170,11 +169,11 @@
                     <a class="logo logo--sidebar" href="index.html" title="На Главную">
                         Kolesa Group
                     </a>
-                    <a class="profile profile--sidebar" href="#" title="Перейти в свой профиль">
-                        <figure class="user flex-container">
+                    <a class="user user--sidebar" href="#" title="Перейти в свой профиль">
+                        <figure class="user__profile flex-container">
                             <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
                             <figcaption class="user__account">
-                                <p class="account__name account__name--mobile">
+                                <p class="user__name user__name--mobile">
                                     Абдурахман
                                     <span class="line-break">Калиакпаров</span>
                                 </p>
@@ -182,49 +181,49 @@
                         </figure>
                     </a>
                     <nav>
-                        <ul class="navbar">
+                        <ul class="sidebar__navbar">
                             <li>
-                                <a class="navlink" href="#" title="Ознакомиться с организационной схемой компании">
+                                <a class="sidebar__link" href="#" title="Ознакомиться с организационной схемой компании">
                                     Оргсхема
                                 </a>
                             </li>
                             <li>
-                                <a class="navlink" href="#" title="Познакомиться с нашей командой">
+                                <a class="sidebar__link" href="#" title="Познакомиться с нашей командой">
                                     Kolesa <span class="accent">Team</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="navlink navlink--active" href="#" title="Получить наш мерч">
+                                <a class="sidebar__link sidebar__link--active" href="#" title="Получить наш мерч">
                                     Kolesa <span class="accent">Shop</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="navlink" href="#" title="Узнать больше о компании">
+                                <a class="sidebar__link" href="#" title="Узнать больше о компании">
                                     Картина компании
                                 </a>
                             </li>
                             <li>
-                                <a class="navlink" href="#" title="Почитать свежие новости о компании">
+                                <a class="sidebar__link" href="#" title="Почитать свежие новости о компании">
                                     Новости
                                 </a>
                             </li>
                             <li>
-                                <a class="navlink" href="#" title="Записаться на курсы">
+                                <a class="sidebar__link" href="#" title="Записаться на курсы">
                                     Education
                                 </a>
                             </li>
                             <li>
-                                <a class="navlink" href="#" title="Сверится с нашими гайдами">
+                                <a class="sidebar__link" href="#" title="Сверится с нашими гайдами">
                                     Guidelines
                                 </a>
                             </li>
                             <li>
-                                <a class="navlink" href="#" title="Посмотреть список рекомендованной литературы">
+                                <a class="sidebar__link" href="#" title="Посмотреть список рекомендованной литературы">
                                     Библиотека
                                 </a>
                             </li>
                             <li>
-                                <a class="navlink" href="#">
+                                <a class="sidebar__link" href="#">
                                     <abbr title="Часто задаваемые вопросы">FAQ</abbr>
                                 </a>
                             </li>
@@ -234,13 +233,13 @@
                 </aside>
             </div>
         </main>
-        <footer>
+        <footer class="footer">
             <div class="wrapper flex-container">
-                <div class="about__company">
-                    <p class="company__copyright">&#169; Kolesa Group</p>
+                <div class="footer__about">
+                    <p class="footer__copyright">&#169; Kolesa Group</p>
                     <ul class="socialbar flex-container">
                         <li>
-                            <a class="sociallink sociallink--insta"
+                            <a class="socialbar__link socialbar__link--insta"
                                 href="https://www.instagram.com/kolesagroup/"
                                 target="_blank"
                                 title="Мы в Instagram">
@@ -248,7 +247,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="sociallink sociallink--yt"
+                            <a class="socialbar__link socialbar__link--yt"
                                 href="https://www.youtube.com/channel/UC6o6waSdIvmIdvy7qTqxY9A"
                                 target="_blank"
                                 title="Наши видео на YouTube">
@@ -256,7 +255,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="sociallink sociallink--vk"
+                            <a class="socialbar__link socialbar__link--vk"
                                 href="https://vk.com/kolesakrishamarket"
                                 target="_blank"
                                 title="Наша страничка ВКонтакте">
@@ -265,8 +264,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="contacts flex-container">
-                    <p class="contacts__invitation">
+                <div class="footer__contacts flex-container">
+                    <p class="footer__invitation">
                         Есть идеи что улучшить?
                         <span class="line-break">Не знаешь, с кем решить проблему?</span>
                     </p>
@@ -274,5 +273,6 @@
                 </div>
             </div>
         </footer>
+        <script type="module" src="./src/js/catalog.js"></script>
     </body>
 </html>

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import 'variables';
+@import '../blocks/buttons';
 
 html {
     box-sizing: border-box;
@@ -57,12 +59,4 @@ a {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-}
-
-.line-break {
-    display: block;
-}
-
-.accent {
-    font-weight: 600;
 }
