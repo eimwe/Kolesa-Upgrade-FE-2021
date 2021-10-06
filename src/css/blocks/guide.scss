@@ -26,32 +26,32 @@
             background-position: center;
         }
 
+        &--add {
+            background-color: $honeydew;
+
+            &::before {
+                background-image: url('../assets/plus-icon.webp');
+            }
+        }
+
+        &--knowhow {
+            background-color: $cosmiclatte;
+
+            &::before {
+                background-image: url('../assets/question-icon.webp');
+            }
+        }
+
+        &--gift {
+            background-color: $aliceblue;
+
+            &::before {
+                background-image: url('../assets/gift-icon.webp');
+            }
+        }
+
         &:hover {
             box-shadow: 0 2px 4px $outline;
-        }
-    }
-
-    &__line--add {
-        background-color: $honeydew;
-
-        &::before {
-            background-image: url('../assets/plus-icon.webp');
-        }
-    }
-
-    &__line--knowhow {
-        background-color: $cosmiclatte;
-
-        &::before {
-            background-image: url('../assets/question-icon.webp');
-        }
-    }
-
-    &__line--gift {
-        background-color: $aliceblue;
-
-        &::before {
-            background-image: url('../assets/gift-icon.webp');
         }
     }
 }
