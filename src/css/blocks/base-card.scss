@@ -1,0 +1,25 @@
+.base-card {
+    max-width: 330px;
+    border-top-left-radius: $radius-sm;
+    border-top-right-radius: $radius-sm;
+    background-color: $white;
+    cursor: pointer;
+
+    &__caption {
+        padding: 16px;
+    }
+
+    &__title {
+        margin-bottom: 4px;
+        font-size: $fs-alerts;
+        font-weight: 600;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .btn--hero {
+        width: 100%;
+        padding-block: 0.45em;
+    }
+}

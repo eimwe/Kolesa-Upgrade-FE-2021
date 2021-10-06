@@ -1,0 +1,86 @@
+@import 'base-card';
+@import 'buttons.scss';
+
+.shop-card {
+    $root: &;
+
+    position: relative;
+
+    &__image {
+        position: relative;
+    }
+
+    &__tag {
+        position: absolute;
+        display: block;
+        padding-inline: 4px;
+        bottom: 16px;
+        left: 16px;
+        border-radius: 4px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: $white;
+
+        &--new {
+            background-color: $green;
+        }
+    }
+
+    &__price {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+        color: $blue;
+    }
+
+    &__options {
+        display: block;
+        color: $grey;
+        margin-bottom: 16px;
+
+        ::after {
+            content: '/';
+        }
+
+        :last-child {
+            &::after {
+                content: '';
+            }
+        }
+    }
+
+    &__action {
+        display: none;
+        position: absolute;
+        bottom: -36px;
+        left: 0;
+        z-index: 1;
+        min-width: 330px;
+        padding-inline: 16px;
+        padding-bottom: 16px;
+        border-bottom-left-radius: $radius-sm;
+        border-bottom-right-radius: $radius-sm;
+        background-color: $white;
+    }
+
+    .btn--hero {
+        margin-top: -16px;
+    }
+
+    &:hover {
+        box-shadow: 0 2px 10px rgba(28, 24, 25, 0.1);
+
+        #{$root} {
+            &__price {
+                color: $red;
+            }
+
+            &__action {
+                display: block;
+                box-shadow: 0 2px 10px rgba(28, 24, 25, 0.1);
+            }
+        }
+    }
+}
