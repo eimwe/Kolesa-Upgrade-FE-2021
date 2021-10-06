@@ -9,26 +9,18 @@
         background-repeat: no-repeat;
         background-position: center;
         transition: transform $duration;
-    }
 
-    &__link--insta {
-        background-image: url('../assets/insta.svg');
-
-        &:hover {
-            @include scaler;
+        &--insta {
+            background-image: url('../assets/insta.svg');
         }
-    }
 
-    &__link--yt {
-        background-image: url('../assets/yt.svg');
-
-        &:hover {
-            @include scaler;
+        &--yt {
+            background-image: url('../assets/yt.svg');
         }
-    }
 
-    &__link--vk {
-        background-image: url('../assets/vk.svg');
+        &--vk {
+            background-image: url('../assets/vk.svg');
+        }
 
         &:hover {
             @include scaler;
