@@ -1,11 +1,11 @@
 .guide {
     display: flex;
-    justify-content: flex-start;
     gap: 24px;
 
     &__line {
         position: relative;
-        width: 330px;
+        width: 100%;
+        min-width: 312px;
         padding: 22px 22px 22px 88px;
         margin-bottom: 40px;
         border-radius: $radius-lg;
@@ -32,7 +32,7 @@
     }
 
     &__line--add {
-        background-color: #eff8eb;
+        background-color: $honeydew;
 
         &::before {
             background-image: url('../assets/plus-icon.webp');
@@ -40,7 +40,7 @@
     }
 
     &__line--knowhow {
-        background-color: #fffae7;
+        background-color: $cosmiclatte;
 
         &::before {
             background-image: url('../assets/question-icon.webp');
@@ -48,7 +48,7 @@
     }
 
     &__line--gift {
-        background-color: #e9f2fb;
+        background-color: $aliceblue;
 
         &::before {
             background-image: url('../assets/gift-icon.webp');
