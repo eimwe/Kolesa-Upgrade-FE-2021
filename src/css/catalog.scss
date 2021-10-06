@@ -1,9 +1,9 @@
-@import './overrides/global';
-@import './structures/layout';
-@import './structures/header';
-@import './structures/main';
+@import './global/global';
+@import './layout/layout';
+@import './layout/header';
+@import './layout/main';
 @import './blocks/banner';
 @import './blocks/guide';
 @import './blocks/radio-buttons';
-@import './structures/footer';
-@import './structures/sidebar';
+@import './layout/footer';
+@import './layout/sidebar';
