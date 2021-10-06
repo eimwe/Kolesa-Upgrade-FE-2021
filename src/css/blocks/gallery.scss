@@ -13,17 +13,23 @@
     }
 
     &__slide {
-        $root: &;
+        display: none;
 
-        img {
-            width: 330px;
-            height: 330px;
-            object-fit: scale-down;
+        &--active {
+            display: block;
         }
+    }
 
-        &:not(#{$root}:nth-child(2)) {
-            display: none;
-        }
+    &__full {
+        width: 330px;
+        height: 330px;
+        object-fit: scale-down;
+    }
+
+    &__preview {
+        width: 50px;
+        height: 50px;
+        border-radius: $radius-sm;
     }
 
     &__thumb {
@@ -32,12 +38,6 @@
 
         &:last-child {
             margin-right: 0;
-        }
-
-        img {
-            width: 50px;
-            height: 50px;
-            border-radius: $radius-sm;
         }
     }
 
