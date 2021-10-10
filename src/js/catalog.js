@@ -46,6 +46,18 @@ const renderCards = (card) => {
     }
 };
 
+function cleanCardContainer() {
+    if (cardContainer.hasChildNodes) {
+        while (cardContainer.firstChild) {
+            cardContainer.removeChild(cardContainer.firstChild);
+        }
+    } else {
+        return false;
+    }
+
+    return true;
+}
+
 const categoryButtons = document.querySelectorAll('.formgroup__input');
 
 categoryButtons.forEach((button) => {
@@ -55,16 +67,19 @@ categoryButtons.forEach((button) => {
 
         switch (categoryKey) {
             case 'apparel':
+                cleanCardContainer();
                 apparel.forEach((card) => {
                     renderCards(card);
                 });
                 break;
             case 'misc':
+                cleanCardContainer();
                 accessories.forEach((card) => {
                     renderCards(card);
                 });
                 break;
             default:
+                cleanCardContainer();
                 everything.forEach((card) => {
                     renderCards(card);
                 });
