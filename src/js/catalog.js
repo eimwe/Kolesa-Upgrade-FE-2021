@@ -31,7 +31,7 @@ const customizeCardTemplate = (id, img, title, price, isTagged) => {
     return shopCard;
 };
 
-apparel.forEach((card) => {
+const renderCards = (card) => {
     const {
         id, img, title, price, isTagged,
     } = card;
@@ -39,14 +39,16 @@ apparel.forEach((card) => {
     const cardContainer = document.getElementById('shop-front');
 
     cardContainer.appendChild(customizedCard);
+
+    if (isTagged) {
+        cardContainer.insertBefore(customizedCard, cardContainer.firstChild);
+    }
+};
+
+apparel.forEach((card) => {
+    renderCards(card);
 });
 
 accessories.forEach((card) => {
-    const {
-        id, img, title, price, isTagged,
-    } = card;
-    const customizedCard = customizeCardTemplate(id, img, title, price, isTagged);
-    const cardContainer = document.getElementById('shop-front');
-
-    cardContainer.appendChild(customizedCard);
+    renderCards(card);
 });
