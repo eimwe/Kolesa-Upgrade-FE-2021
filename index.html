@@ -56,113 +56,32 @@
                     </nav>
                     <div class="main__stack">
                         <form id="switch-tabs" action="#" method="POST">
-                            <fieldset class="formgroup" role="tablist" aria-label="Category tabs">
+                            <fieldset class="formgroup" aria-label="Category tabs">
                                 <legend class="formgroup__caption formgroup__caption--catalog">Выберите категорию товаров</legend>
                                 <div class="formgroup__btn"
-                                    role="tab"
-                                    aria-selected="true"
-                                    aria-controls="all-items"
                                     tabindex="0">
                                     <input class="formgroup__input" type="radio" id="category-all" name="category" value="all" checked>
                                     <label class="formgroup__label formgroup__label--catalog" for="category-all">Все товары</label>
                                 </div>
                                 <div class="formgroup__btn"
-                                    role="tab"
-                                    aria-selected="true"
-                                    aria-controls="clothing"
                                     tabindex="0">
                                     <input class="formgroup__input" type="radio" id="category-apparel" name="category" value="apparel">
                                     <label class="formgroup__label formgroup__label--catalog" for="category-apparel">Одежда</label>
                                 </div>
                                 <div class="formgroup__btn"
-                                    role="tab"
-                                    aria-selected="true"
-                                    aria-controls="accessories"
                                     tabindex="0">
-                                    <input class="formgroup__input" type="radio" id="category-utensils" name="category" value="utensils">
-                                    <label class="formgroup__label formgroup__label--catalog" for="category-utensils">Аксессуары</label>
+                                    <input class="formgroup__input" type="radio" id="category-misc" name="category" value="misc">
+                                    <label class="formgroup__label formgroup__label--catalog" for="category-misc">Аксессуары</label>
                                 </div>
                             </fieldset>
                         </form>
-                        <div id="all-items" class="main__tiles"
+                        <output id="shop-front" class="main__tiles"
+                            name="card-container"
+                            for="category-all category-apparel category-misc"
                             role="tabpanel"
                             aria-live="polite"
                             tabindex="0">
-                            <div class="base-card shop-card">
-                                <div class="shop-card__image">
-                                    <img src="src/assets/shirt.webp" alt="Футболка">
-                                    <span class="shop-card__tag shop-card__tag--new">New</span>
-                                </div>
-                                <article class="base-card__caption">
-                                    <span class="shop-card__price">220 баллов</span>
-                                    <h2 class="base-card__title">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
-                                    <span class="shop-card__options">
-                                        Размеры <span class="shop-card__option">S</span><!--
-                                                --><span class="shop-card__option">M</span><!--
-                                                --><span class="shop-card__option">L</span>
-                                    </span>
-                                    <div class="shop-card__action">
-                                        <button class="btn btn--hero" type="button">Заказать</button>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="base-card shop-card">
-                                <div class="shop-card__image">
-                                    <img src="src/assets/sweatshirt-02.webp" alt="Свитшот">
-                                </div>
-                                <article class="base-card__caption">
-                                    <span class="shop-card__price">220 баллов</span>
-                                    <h2 class="base-card__title">Свитшот</h2>
-                                    <span class="shop-card__options">
-                                        Размеры <span class="shop-card__option">S</span><span class="shop-card__option">M</span><span class="shop-card__option">L</span>
-                                    </span>
-                                    <div class="shop-card__action">
-                                        <button class="btn btn--hero" type="button">Заказать</button>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="base-card shop-card">
-                                <div class="shop-card__image">
-                                    <img src="src/assets/shirt.webp" alt="Футболка">
-                                </div>
-                                <article class="base-card__caption">
-                                    <span class="shop-card__price">220 баллов</span>
-                                    <h2 class="base-card__title">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
-                                    <span class="shop-card__options">
-                                        Размеры <span class="shop-card__option">S</span><span class="shop-card__option">M</span><span class="shop-card__option">L</span>
-                                    </span>
-                                    <div class="shop-card__action">
-                                        <button class="btn btn--hero" type="button">Заказать</button>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="base-card shop-card">
-                                <div class="shop-card__image">
-                                    <img src="src/assets/sweatshirt-02.webp" alt="Свитшот">
-                                    <span class="shop-card__tag shop-card__tag--new">New</span>
-                                </div>
-                                <article class="base-card__caption">
-                                    <span class="shop-card__price">220 баллов</span>
-                                    <h2 class="base-card__title">Свитшот</h2>
-                                    <span class="shop-card__options">
-                                        Размеры <span class="shop-card__option">S</span><span class="shop-card__option">M</span><span class="shop-card__option">L</span>
-                                    </span>
-                                    <div class="shop-card__action">
-                                        <button class="btn btn--hero" type="button">Заказать</button>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                        <div id="clothing" class="main__tiles"
-                            role="tabpanel"
-                            aria-live="polite"
-                            tabindex="0" hidden>
-                        </div>
-                        <div id="accessories" class="main__tiles"
-                            role="tabpanel"
-                            aria-live="polite"
-                            tabindex="0" hidden>
-                        </div>
+                        </output>
                     </div>
                 </div>
                 <aside class="sidebar">
@@ -273,6 +192,24 @@
                 </div>
             </div>
         </footer>
+        <template id="shopcard-template">
+            <a class="base-card shop-card">
+                <div class="shop-card__image">
+                    <img src="src/assets/shirt.webp" alt="Футболка">
+                    <span class="shop-card__tag shop-card__tag--new">New</span>
+                </div>
+                <article class="base-card__caption">
+                    <span class="shop-card__price">220 баллов</span>
+                    <h2 class="base-card__title">Футболка &quot;Эволюционируй или сдохни&quot;</h2>
+                    <span class="shop-card__options">
+                        Размеры <span class="shop-card__option">S</span><span class="shop-card__option">M</span><span class="shop-card__option">L</span>
+                    </span>
+                    <div class="shop-card__action">
+                        <button class="btn btn--hero" type="button">Заказать</button>
+                    </div>
+                </article>
+            </a>
+        </template>
         <script type="module" src="./src/js/catalog.js"></script>
     </body>
 </html>
