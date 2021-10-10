@@ -5,6 +5,7 @@ const apparel = CLOTHES;
 const accessories = MISC;
 const everything = [...apparel, ...accessories];
 const cardContainer = document.getElementById('shop-front');
+const categoryButtons = document.querySelectorAll('.formgroup__input');
 
 const customizeCardTemplate = (id, img, title, price, isTagged) => {
     const cardTemplate = document.getElementById('shopcard-template');
@@ -58,31 +59,30 @@ function cleanCardContainer() {
     return true;
 }
 
-const categoryButtons = document.querySelectorAll('.formgroup__input');
+function renderCardsByCategory(category) {
+    category.forEach((card) => {
+        renderCards(card);
+    });
+}
 
 categoryButtons.forEach((button) => {
     button.addEventListener('change', (event) => {
         const categoryButton = event.target;
         const categoryKey = categoryButton.dataset.key;
 
+        cleanCardContainer();
+
         switch (categoryKey) {
             case 'apparel':
-                cleanCardContainer();
-                apparel.forEach((card) => {
-                    renderCards(card);
-                });
+                renderCardsByCategory(apparel);
                 break;
             case 'misc':
-                cleanCardContainer();
-                accessories.forEach((card) => {
-                    renderCards(card);
-                });
+                renderCardsByCategory(accessories);
                 break;
             default:
-                cleanCardContainer();
-                everything.forEach((card) => {
-                    renderCards(card);
-                });
+                renderCardsByCategory(everything);
         }
     });
 });
+
+renderCardsByCategory(everything);
