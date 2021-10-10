@@ -3,6 +3,8 @@ import { CLOTHES, MISC } from './shopcards';
 
 const apparel = CLOTHES;
 const accessories = MISC;
+const everything = [...apparel, ...accessories];
+const cardContainer = document.getElementById('shop-front');
 
 const customizeCardTemplate = (id, img, title, price, isTagged) => {
     const cardTemplate = document.getElementById('shopcard-template');
@@ -36,7 +38,6 @@ const renderCards = (card) => {
         id, img, title, price, isTagged,
     } = card;
     const customizedCard = customizeCardTemplate(id, img, title, price, isTagged);
-    const cardContainer = document.getElementById('shop-front');
 
     cardContainer.appendChild(customizedCard);
 
@@ -45,10 +46,28 @@ const renderCards = (card) => {
     }
 };
 
-apparel.forEach((card) => {
-    renderCards(card);
-});
+const categoryButtons = document.querySelectorAll('.formgroup__input');
 
-accessories.forEach((card) => {
-    renderCards(card);
+categoryButtons.forEach((button) => {
+    button.addEventListener('change', (event) => {
+        const categoryButton = event.target;
+        const categoryKey = categoryButton.dataset.key;
+
+        switch (categoryKey) {
+            case 'apparel':
+                apparel.forEach((card) => {
+                    renderCards(card);
+                });
+                break;
+            case 'misc':
+                accessories.forEach((card) => {
+                    renderCards(card);
+                });
+                break;
+            default:
+                everything.forEach((card) => {
+                    renderCards(card);
+                });
+        }
+    });
 });
