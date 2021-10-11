@@ -34,45 +34,45 @@ const customizeCardTemplate = (id, img, title, price, isTagged) => {
     return shopCard;
 };
 
-// const customizeOrderModalTemplate = (title, price, details, fullsized, thumbs) => {
-//     const orderModalTemplate = document.getElementById('modal-order-template');
-//     const orderModal = orderModalTemplate.content.firstElementChild.cloneNode(true);
-//     const fullsizedImgWrapper = orderModal.querySelector('.gallery__fullsize');
-//     const thumbImgWrapper = orderModal.querySelector('.gallery__thumbs');
-//     const modalImagePath = 'src/assets/images/gallery/';
+const customizeOrderModalTemplate = (title, price, details, fullsized, thumbs) => {
+    const orderModalTemplate = document.getElementById('modal-order-template');
+    const orderModal = orderModalTemplate.content.firstElementChild.cloneNode(true);
+    const fullsizedImgWrapper = orderModal.querySelector('.gallery__fullsize');
+    const thumbImgWrapper = orderModal.querySelector('.gallery__thumbs');
+    const modalImagePath = 'src/assets/images/gallery/';
 
-//     orderModal.querySelector('.modal__title').textContent = title;
-//     orderModal.querySelector('.modal__price').textContent = `${price} баллов`;
-//     orderModal.querySelectorAll('.modal__details')[0].textContent = details;
+    orderModal.querySelector('.modal__title').textContent = title;
+    orderModal.querySelector('.modal__price').textContent = `${price} баллов`;
+    orderModal.querySelectorAll('.modal__details')[0].textContent = details;
 
-//     fullsized.forEach((fullImage) => {
-//         const liNode = document.createElement('LI');
-//         const modalImage = new Image();
+    fullsized.forEach((fullImage) => {
+        const liNode = document.createElement('LI');
+        const modalImage = new Image();
 
-//         modalImage.src = modalImagePath + fullImage;
-//         modalImage.setAttribute('alt', title);
-//         modalImage.classList.add('gallery__full');
-//         liNode.appendChild(modalImage);
-//         fullsizedImgWrapper.appendChild(liNode);
-//         liNode.classList.add('gallery__slide');
-//         fullsizedImgWrapper.firstElementChild.classList.add('gallery__slide--active');
-//     });
+        modalImage.src = modalImagePath + fullImage;
+        modalImage.setAttribute('alt', title);
+        modalImage.classList.add('gallery__full');
+        liNode.appendChild(modalImage);
+        fullsizedImgWrapper.appendChild(liNode);
+        liNode.classList.add('gallery__slide');
+        fullsizedImgWrapper.firstElementChild.classList.add('gallery__slide--active');
+    });
 
-//     thumbs.forEach((thumb) => {
-//         const liNode = document.createElement('LI');
-//         const modalImage = new Image();
+    thumbs.forEach((thumb) => {
+        const liNode = document.createElement('LI');
+        const modalImage = new Image();
 
-//         modalImage.src = modalImagePath + thumb;
-//         modalImage.setAttribute('alt', title);
-//         modalImage.classList.add('gallery__preview');
-//         liNode.appendChild(modalImage);
-//         thumbImgWrapper.appendChild(liNode);
-//         liNode.classList.add('gallery__thumb');
-//         thumbImgWrapper.firstElementChild.classList.add('gallery__thumb--active');
-//     });
+        modalImage.src = modalImagePath + thumb;
+        modalImage.setAttribute('alt', title);
+        modalImage.classList.add('gallery__preview');
+        liNode.appendChild(modalImage);
+        thumbImgWrapper.appendChild(liNode);
+        liNode.classList.add('gallery__thumb');
+        thumbImgWrapper.firstElementChild.classList.add('gallery__thumb--active');
+    });
 
-//     return orderModal;
-// };
+    return orderModal;
+};
 
 const renderCards = (card) => {
     const {
@@ -87,16 +87,16 @@ const renderCards = (card) => {
     }
 };
 
-// const renderOrderModals = (card, id) => {
-//     const {
-//         title, price, details, fullsized, thumbs,
-//     } = card[id];
-//     const customizedOrderModal = customizeOrderModalTemplate(title, price, details, fullsized, thumbs);
+const renderOrderModals = (card, id) => {
+    const {
+        title, price, details, fullsized, thumbs,
+    } = card[id];
+    const customizedOrderModal = customizeOrderModalTemplate(title, price, details, fullsized, thumbs);
 
-//     document.body.insertBefore(customizedOrderModal, document.body.firstElementChild);
+    document.body.insertBefore(customizedOrderModal, document.body.firstElementChild);
 
-//     return customizedOrderModal;
-// };
+    return customizedOrderModal;
+};
 
 function cleanCardContainer() {
     if (cardContainer.hasChildNodes) {
@@ -114,7 +114,22 @@ function renderCardsByCategory(category) {
     category.forEach((card) => {
         renderCards(card);
     });
+
+    const renderedCards = document.querySelectorAll('.shop-card');
+
+    return renderedCards;
 }
+
+const showOrderModal = (renderedCards) => {
+    renderedCards.forEach((card) => {
+        card.addEventListener('click', (event) => {
+            const clickedCard = event.target;
+            const cardId = clickedCard.closest('.shop-card').dataset.id;
+
+            renderOrderModals(everything, cardId);
+        });
+    });
+};
 
 categoryButtons.forEach((button) => {
     button.addEventListener('change', (event) => {
@@ -125,15 +140,15 @@ categoryButtons.forEach((button) => {
 
         switch (categoryKey) {
             case 'apparel':
-                renderCardsByCategory(apparel);
+                showOrderModal(renderCardsByCategory(apparel));
                 break;
             case 'misc':
-                renderCardsByCategory(accessories);
+                showOrderModal(renderCardsByCategory(accessories));
                 break;
             default:
-                renderCardsByCategory(everything);
+                showOrderModal(renderCardsByCategory(everything));
         }
     });
 });
 
-renderCardsByCategory(everything);
+showOrderModal(renderCardsByCategory(everything));
