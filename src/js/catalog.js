@@ -1,4 +1,5 @@
 import '../css/catalog.scss';
+import '../css/order.scss';
 import { CLOTHES, MISC } from './shopcards';
 
 const apparel = CLOTHES;
