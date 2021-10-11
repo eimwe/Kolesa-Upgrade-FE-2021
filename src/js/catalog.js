@@ -34,6 +34,46 @@ const customizeCardTemplate = (id, img, title, price, isTagged) => {
     return shopCard;
 };
 
+// const customizeOrderModalTemplate = (title, price, details, fullsized, thumbs) => {
+//     const orderModalTemplate = document.getElementById('modal-order-template');
+//     const orderModal = orderModalTemplate.content.firstElementChild.cloneNode(true);
+//     const fullsizedImgWrapper = orderModal.querySelector('.gallery__fullsize');
+//     const thumbImgWrapper = orderModal.querySelector('.gallery__thumbs');
+//     const modalImagePath = 'src/assets/images/gallery/';
+
+//     orderModal.querySelector('.modal__title').textContent = title;
+//     orderModal.querySelector('.modal__price').textContent = `${price} баллов`;
+//     orderModal.querySelectorAll('.modal__details')[0].textContent = details;
+
+//     fullsized.forEach((fullImage) => {
+//         const liNode = document.createElement('LI');
+//         const modalImage = new Image();
+
+//         modalImage.src = modalImagePath + fullImage;
+//         modalImage.setAttribute('alt', title);
+//         modalImage.classList.add('gallery__full');
+//         liNode.appendChild(modalImage);
+//         fullsizedImgWrapper.appendChild(liNode);
+//         liNode.classList.add('gallery__slide');
+//         fullsizedImgWrapper.firstElementChild.classList.add('gallery__slide--active');
+//     });
+
+//     thumbs.forEach((thumb) => {
+//         const liNode = document.createElement('LI');
+//         const modalImage = new Image();
+
+//         modalImage.src = modalImagePath + thumb;
+//         modalImage.setAttribute('alt', title);
+//         modalImage.classList.add('gallery__preview');
+//         liNode.appendChild(modalImage);
+//         thumbImgWrapper.appendChild(liNode);
+//         liNode.classList.add('gallery__thumb');
+//         thumbImgWrapper.firstElementChild.classList.add('gallery__thumb--active');
+//     });
+
+//     return orderModal;
+// };
+
 const renderCards = (card) => {
     const {
         id, img, title, price, isTagged,
