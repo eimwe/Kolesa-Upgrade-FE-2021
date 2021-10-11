@@ -129,6 +129,32 @@ const closeOrderModal = () => {
     });
 };
 
+const showGallerySlides = () => {
+    const thumbnails = Array.from(document.querySelectorAll('.gallery__thumb'));
+    const fullsizedsImgs = Array.from(document.querySelectorAll('.gallery__slide'));
+
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener('click', (event) => {
+            const thumbNode = event.target.parentNode;
+            const activeThumb = document.querySelector('.gallery__thumb--active');
+
+            // eslint-disable-next-line no-plusplus
+            for (let itr = 0; itr < thumbnails.length; itr++) {
+                if (thumbNode !== thumbnails[itr]) {
+                    fullsizedsImgs[itr].classList.remove('gallery__slide--active');
+                } else {
+                    fullsizedsImgs[itr].classList.toggle('gallery__slide--active');
+                }
+            }
+
+            if (thumbNode !== activeThumb) {
+                thumbNode.classList.toggle('gallery__thumb--active');
+                activeThumb.classList.toggle('gallery__thumb--active');
+            }
+        });
+    });
+};
+
 const showOrderModal = (renderedCards) => {
     renderedCards.forEach((card) => {
         card.addEventListener('click', (event) => {
@@ -136,6 +162,8 @@ const showOrderModal = (renderedCards) => {
             const cardId = clickedCard.closest('.shop-card').dataset.id;
 
             renderOrderModals(everything, cardId);
+
+            showGallerySlides();
 
             closeOrderModal();
         });
