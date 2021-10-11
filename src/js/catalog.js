@@ -120,6 +120,14 @@ function renderCardsByCategory(category) {
     return renderedCards;
 }
 
+const closeOrderModal = () => {
+    const modalCloseButton = document.querySelector('.modal__close');
+
+    modalCloseButton.addEventListener('click', () => {
+        document.body.removeChild(document.body.firstElementChild);
+    });
+};
+
 const showOrderModal = (renderedCards) => {
     renderedCards.forEach((card) => {
         card.addEventListener('click', (event) => {
@@ -127,6 +135,8 @@ const showOrderModal = (renderedCards) => {
             const cardId = clickedCard.closest('.shop-card').dataset.id;
 
             renderOrderModals(everything, cardId);
+
+            closeOrderModal();
         });
     });
 };
