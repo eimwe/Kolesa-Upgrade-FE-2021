@@ -87,6 +87,17 @@ const renderCards = (card) => {
     }
 };
 
+// const renderOrderModals = (card, id) => {
+//     const {
+//         title, price, details, fullsized, thumbs,
+//     } = card[id];
+//     const customizedOrderModal = customizeOrderModalTemplate(title, price, details, fullsized, thumbs);
+
+//     document.body.insertBefore(customizedOrderModal, document.body.firstElementChild);
+
+//     return customizedOrderModal;
+// };
+
 function cleanCardContainer() {
     if (cardContainer.hasChildNodes) {
         while (cardContainer.firstChild) {
