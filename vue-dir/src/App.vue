@@ -19,7 +19,7 @@
                 </form>
                 <a class="user" href="#" title="Перейти в свой профиль">
                     <figure class="user__profile flex-container">
-                        <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
+                        <img class="user__avatar" src="./assets/images/main/avatar.webp" alt="Фото пользователя">
                         <figcaption class="user__account">
                             <p class="user__name">Мортиджан</p>
                             <span class="user__budget">300 баллов</span>
@@ -33,8 +33,10 @@
         <div class="wrapper grid-container">
             <div class="main__container">
                 <picture class="banner">
-                    <source media="(max-width: 600px)" srcset="src/assets/hero-banner-600w.webp">
-                    <img class="banner__img" src="src/assets/hero-banner.webp" alt="Летняя распродажа нашего мерча">
+                    <source media="(max-width: 600px)" srcset="./assets/images/main/hero-banner-600w.webp">
+                    <img class="banner__img"
+                        src="./assets/images/main/hero-banner.webp"
+                        alt="Летняя распродажа нашего мерча">
                 </picture>
                 <nav class="guide" aria-label="Quick user guide">
                     <a class="guide__line guide__line--add" href="#"
@@ -112,7 +114,7 @@
                 </a>
                 <a class="user user--sidebar" href="#" title="Перейти в свой профиль">
                     <figure class="user__profile flex-container">
-                        <img class="user__avatar" src="src/assets/avatar.webp" alt="Фото пользователя">
+                        <img class="user__avatar" src="./assets/images/main/avatar.webp" alt="Фото пользователя">
                         <figcaption class="user__account">
                             <p class="user__name user__name--mobile">
                                 Абдурахман
@@ -222,15 +224,10 @@
 // import HelloWorld from './components/HelloWorld.vue';
 
 export default {
-  name: 'App',
-  components: {
-
-    /**
-    * This is a really really really really really really really really really long comment
-    */
-
-    // HelloWorld,
-  },
+    name:       'App',
+    components: {
+        // HelloWorld,
+    },
 };
 </script>
 
