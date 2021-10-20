@@ -105,11 +105,20 @@
                         role="tabpanel"
                         aria-live="polite"
                         tabindex="0">
-                        <a class="base-card shop-card" data-id="0">
-                            <div class="shop-card__image"></div>
+                        <a class="base-card shop-card"
+                            v-for="item in clothes"
+                            :key="item.id"
+                            :data-id="item.id">
+                            <div class="shop-card__image">
+                                <img :src="require(`./assets/images/shop/` + item.img)">
+                                <span class="shop-card__tag shop-card__tag--new"
+                                    v-if="item.isTagged">
+                                    New
+                                </span>
+                            </div>
                             <article class="base-card__caption">
-                                <span class="shop-card__price"></span>
-                                <h2 class="base-card__title"></h2>
+                                <span class="shop-card__price">{{ item.price }} баллов</span>
+                                <h2 class="base-card__title">{{ item.title }}</h2>
                                 <span class="shop-card__options">
                                     Размеры <span class="shop-card__option">S</span>
                                             <span class="shop-card__option">M</span>
@@ -237,7 +246,7 @@
 <script>
 
 export default {
-    name:       'App',
+    name: 'App',
     data() {
         return {
             clothes: [
