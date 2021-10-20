@@ -236,12 +236,55 @@
 
 <script>
 
-// import HelloWorld from './components/HelloWorld.vue';
-
 export default {
     name:       'App',
-    components: {
-        // HelloWorld,
+    data() {
+        return {
+            clothes: [
+                {
+                    id:       0,
+                    img:      'shirt.webp',
+                    title:    'Футболка "Эволюционируй или сдохни"',
+                    price:    '220',
+                    isTagged: false,
+                },
+                {
+                    id:       1,
+                    img:      'sweatshirt.webp',
+                    title:    'Свитшот',
+                    price:    '320',
+                    isTagged: false,
+                },
+                {
+                    id:       2,
+                    img:      'dom-shirt.webp',
+                    title:    'Футболка "DOM"',
+                    price:    '250',
+                    isTagged: true,
+                },
+                {
+                    id:       3,
+                    img:      'survivor-shirt.webp',
+                    title:    'Футболка "Выживший"',
+                    price:    '0',
+                    isTagged: true,
+                },
+                {
+                    id:       4,
+                    img:      'async-sweatshirt.webp',
+                    title:    'Худи "async/await"',
+                    price:    '320',
+                    isTagged: false,
+                },
+                {
+                    id:       5,
+                    img:      'socks.webp',
+                    title:    'Носочки "Kolesa Group Rocks"',
+                    price:    '75',
+                    isTagged: false,
+                },
+            ],
+        };
     },
 };
 </script>
