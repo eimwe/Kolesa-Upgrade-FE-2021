@@ -1,0 +1,25 @@
+/* Для трансформаций при наведении курсора */
+@mixin scaler {
+    transform: scale(1.5);
+}
+
+/* Скрывает со страницы, но оставляет доступным для скрин ридеров */
+@mixin visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Перенос строки */
+@mixin line-break {
+    display: block;
+}
+
+/* Выделение текста болдом */
+@mixin accent {
+    font-weight: 600;
+}

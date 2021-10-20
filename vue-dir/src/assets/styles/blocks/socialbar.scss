@@ -1,0 +1,29 @@
+.socialbar {
+    width: 88px;
+
+    &__link {
+        display: block;
+        width: 24px;
+        height: 24px;
+        font-size: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform $duration;
+
+        &--insta {
+            background-image: url('./assets/images/main/insta.svg');
+        }
+
+        &--yt {
+            background-image: url('./assets/images/main/yt.svg');
+        }
+
+        &--vk {
+            background-image: url('./assets/images/main/vk.svg');
+        }
+
+        &:hover {
+            @include scaler;
+        }
+    }
+}

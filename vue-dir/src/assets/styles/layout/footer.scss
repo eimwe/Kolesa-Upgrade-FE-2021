@@ -1,0 +1,23 @@
+@import '../blocks/socialbar';
+@import '../helpers/mixins';
+
+.footer {
+    padding: 20px 0 22px 0;
+    color: #fff;
+    background-color: $dark;
+
+    &__copyright {
+        margin-bottom: 8px;
+        font-size: 16px;
+    }
+
+    &__contacts {
+        gap: 54px;
+    }
+
+    &__invitation {
+        .line-break {
+            @include line-break;
+        }
+    }
+}
