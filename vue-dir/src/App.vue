@@ -105,6 +105,21 @@
                         role="tabpanel"
                         aria-live="polite"
                         tabindex="0">
+                        <a class="base-card shop-card" data-id="0">
+                            <div class="shop-card__image"></div>
+                            <article class="base-card__caption">
+                                <span class="shop-card__price"></span>
+                                <h2 class="base-card__title"></h2>
+                                <span class="shop-card__options">
+                                    Размеры <span class="shop-card__option">S</span>
+                                            <span class="shop-card__option">M</span>
+                                            <span class="shop-card__option">L</span>
+                                </span>
+                                <div class="shop-card__action">
+                                    <button class="btn btn--hero" type="button">Заказать</button>
+                                </div>
+                            </article>
+                        </a>
                     </output>
                 </div>
             </div>
