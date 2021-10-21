@@ -278,49 +278,13 @@
                 </a>
                 <nav>
                     <ul class="sidebar__navbar">
-                        <li>
-                            <a class="sidebar__link" href="#" title="Ознакомиться с организационной схемой компании">
-                                Оргсхема
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar__link" href="#" title="Познакомиться с нашей командой">
-                                Kolesa <span class="accent">Team</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar__link sidebar__link--active" href="#" title="Получить наш мерч">
-                                Kolesa <span class="accent">Shop</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar__link" href="#" title="Узнать больше о компании">
-                                Картина компании
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar__link" href="#" title="Почитать свежие новости о компании">
-                                Новости
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar__link" href="#" title="Записаться на курсы">
-                                Education
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar__link" href="#" title="Сверится с нашими гайдами">
-                                Guidelines
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar__link" href="#" title="Посмотреть список рекомендованной литературы">
-                                Библиотека
-                            </a>
-                        </li>
-                        <li>
-                            <a class="sidebar__link" href="#">
-                                <abbr title="Часто задаваемые вопросы">FAQ</abbr>
+                        <li
+                            v-for="navlink in navbar"
+                            :key="navlink.id"
+                        >
+                            <a class="sidebar__link"
+                                href="#">
+                                {{navlink}}
                             </a>
                         </li>
                     </ul>
@@ -468,10 +432,18 @@ export default {
             ],
             everything:  [],
             isShowModal: false,
+            navbar:      [
+                'Оргсхема',
+                'Kolesa Team',
+                'Kolesa Shop',
+                'Картина компании',
+                'Новости',
+                'Education',
+                'Guidelines',
+                'Библиотека',
+                'FAQ',
+            ],
         };
-    },
-    computed: {
-
     },
     methods: {
         mergeEverything() {
