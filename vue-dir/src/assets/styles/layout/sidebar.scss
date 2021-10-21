@@ -1,0 +1,45 @@
+@import '../helpers/mixins';
+
+.logo--sidebar,
+.user--sidebar,
+.btn--logout--mobile {
+    display: none;
+}
+
+.sidebar {
+    &__navbar {
+        min-width: 150px;
+        font-size: $fs-alerts;
+    }
+
+    &__link {
+        display: block;
+        margin-bottom: 26px;
+        transition: color $duration;
+
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    &__link--active {
+        position: relative;
+        pointer-events: none;
+        font-weight: 600;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: calc(50% - 18px);
+            left: -8px;
+            width: 4px;
+            height: 36px;
+            border-radius: 10px;
+            background-color: $blue;
+        }
+    }
+
+    .accent {
+        @include accent;
+    }
+}
