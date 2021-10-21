@@ -455,4 +455,5 @@ export default {
 
 <style lang="scss">
 @use './assets/styles/catalog';
+@use './assets/styles/order';
 </style>
