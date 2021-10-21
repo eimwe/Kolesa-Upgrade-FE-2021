@@ -1,11 +1,10 @@
 <template>
   <div id="app">
     <div v-if="isShowModal"
-         @click="closeModal"
+         @click="toggleModal"
          class="overlay flex-container">
         <div class="modal modal--shopitem">
             <button
-                @click="closeModal"
                 class="modal__close"
                 type="button">Закрыть</button>
             <div class="modal__content flex-container">
@@ -253,7 +252,7 @@
                                     <button
                                         class="btn btn--hero"
                                         type="button"
-                                        @click="openModal"
+                                        @click="toggleModal"
                                     >Заказать</button>
                                 </div>
                             </article>
@@ -452,12 +451,8 @@ export default {
             return this.everything;
         },
 
-        openModal() {
-            this.isShowModal = true;
-        },
-
-        closeModal() {
-            this.isShowModal = false;
+        toggleModal() {
+            this.isShowModal = !this.isShowModal;
         },
     },
 };
