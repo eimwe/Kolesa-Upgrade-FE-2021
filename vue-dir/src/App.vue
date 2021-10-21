@@ -5,11 +5,31 @@
             <button class="modal__close" type="button">Закрыть</button>
             <div class="modal__content flex-container">
                 <div class="gallery" aria-roledescription="carousel">
-                    <ul class="gallery__fullsize flex-container"></ul>
-                    <ul class="gallery__thumbs flex-container"></ul>
+                    <ul class="gallery__fullsize flex-container">
+                        <li class="gallery__slide">
+                            <img class="gallery__full" src="./assets/images/gallery/shirt-01.webp">
+                        </li>
+                        <li class="gallery__slide gallery__slide--active">
+                            <img class="gallery__full" src="./assets/images/gallery/shirt-02.webp">
+                        </li>
+                        <li class="gallery__slide">
+                            <img class="gallery__full" src="./assets/images/gallery/shirt-03.webp">
+                        </li>
+                    </ul>
+                    <ul class="gallery__thumbs flex-container">
+                        <li class="gallery__thumb">
+                            <img class="gallery__preview" src="./assets/images/gallery/shirt-thumb-01.webp">
+                        </li>
+                        <li class="gallery__thumb gallery__thumb--active">
+                            <img class="gallery__preview" src="./assets/images/gallery/shirt-thumb-02.webp">
+                        </li>
+                        <li class="gallery__thumb">
+                            <img class="gallery__preview" src="./assets/images/gallery/shirt-thumb-03.webp">
+                        </li>
+                    </ul>
                 </div>
                 <section class="modal__desc">
-                    <h2 class="modal__title"></h2>
+                    <h2 class="modal__title">Футболка</h2>
                     <span class="modal__price"></span>
                     <div class="modal__user flex-container">
                         <button class="btn btn--hero" type="submit" form="order" value="Submit">Заказать</button>
