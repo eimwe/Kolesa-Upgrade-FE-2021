@@ -1,8 +1,13 @@
 <template>
   <div id="app">
-    <div class="overlay flex-container">
+    <div v-if="isShowModal"
+         @click="closeModal"
+         class="overlay flex-container">
         <div class="modal modal--shopitem">
-            <button class="modal__close" type="button">Закрыть</button>
+            <button
+                @click="closeModal"
+                class="modal__close"
+                type="button">Закрыть</button>
             <div class="modal__content flex-container">
                 <div class="gallery" aria-roledescription="carousel">
                     <ul class="gallery__fullsize flex-container">
@@ -245,7 +250,11 @@
                                             <span class="shop-card__option">L</span>
                                 </span>
                                 <div class="shop-card__action">
-                                    <button class="btn btn--hero" type="button">Заказать</button>
+                                    <button
+                                        class="btn btn--hero"
+                                        type="button"
+                                        @click="openModal"
+                                    >Заказать</button>
                                 </div>
                             </article>
                         </a>
@@ -457,7 +466,8 @@ export default {
                     isTagged: false,
                 },
             ],
-            everything: [],
+            everything:  [],
+            isShowModal: false,
         };
     },
     computed: {
@@ -468,6 +478,14 @@ export default {
             this.everything = [...this.clothes, ...this.accessories];
 
             return this.everything;
+        },
+
+        openModal() {
+            this.isShowModal = true;
+        },
+
+        closeModal() {
+            this.isShowModal = false;
         },
     },
 };
