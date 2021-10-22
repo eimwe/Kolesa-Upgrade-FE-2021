@@ -456,7 +456,20 @@ export default {
             this.isShowModal = !this.isShowModal;
         },
 
+        findNewest(array) {
+            array.forEach((item, index) => {
+                if (item.isTagged) {
+                    array.splice(index, 1);
+                    array.unshift(item);
+                }
+            });
+
+            return array;
+        },
+
         getCategory(category) {
+            this.findNewest(category);
+
             this.items = category;
 
             return category;
@@ -464,6 +477,8 @@ export default {
 
         mergeEverything(category) {
             category = [...this.clothes, ...this.accessories];
+
+            this.findNewest(category);
 
             this.items = category;
 
