@@ -185,6 +185,7 @@
                             <div class="formgroup__btn"
                                 tabindex="0">
                                 <input class="formgroup__input"
+                                    @change="mergeEverything(everything)"
                                     type="radio"
                                     data-key="all"
                                     id="category-all"
@@ -198,6 +199,7 @@
                             <div class="formgroup__btn"
                                 tabindex="0">
                                 <input class="formgroup__input"
+                                    @change="getCategory(clothes)"
                                     type="radio"
                                     data-key="apparel"
                                     id="category-apparel"
@@ -211,6 +213,7 @@
                             <div class="formgroup__btn"
                                 tabindex="0">
                                 <input class="formgroup__input"
+                                    @change="getCategory(accessories)"
                                     type="radio"
                                     data-key="misc"
                                     id="category-misc"
@@ -230,7 +233,7 @@
                         aria-live="polite"
                         tabindex="0">
                         <a class="base-card shop-card"
-                            v-for="item in mergeEverything()"
+                            v-for="item in items"
                             :key="item.id"
                             :data-id="item.id">
                             <div class="shop-card__image">
@@ -430,6 +433,7 @@ export default {
                 },
             ],
             everything:  [],
+            items:       [],
             isShowModal: false,
             navbar:      [
                 'Оргсхема',
@@ -444,15 +448,26 @@ export default {
             ],
         };
     },
+    created() {
+        this.mergeEverything();
+    },
     methods: {
-        mergeEverything() {
-            this.everything = [...this.clothes, ...this.accessories];
-
-            return this.everything;
-        },
-
         toggleModal() {
             this.isShowModal = !this.isShowModal;
+        },
+
+        getCategory(category) {
+            this.items = category;
+
+            return category;
+        },
+
+        mergeEverything(category) {
+            category = [...this.clothes, ...this.accessories];
+
+            this.items = category;
+
+            return category;
         },
     },
 };
