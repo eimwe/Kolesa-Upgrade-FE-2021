@@ -285,8 +285,13 @@
                             :key="navlink.id"
                         >
                             <a class="sidebar__link"
+                                :class="{
+                                    'sidebar__link--active': navlink.isActive,
+                                    '': !navlink.isActive,
+                                }"
+                                @click="toggleActive(navlink)"
                                 href="#">
-                                {{navlink}}
+                                {{navlink.anchor}}
                             </a>
                         </li>
                     </ul>
@@ -436,15 +441,42 @@ export default {
             items:       [],
             isShowModal: false,
             navbar:      [
-                'Оргсхема',
-                'Kolesa Team',
-                'Kolesa Shop',
-                'Картина компании',
-                'Новости',
-                'Education',
-                'Guidelines',
-                'Библиотека',
-                'FAQ',
+                {
+                    anchor:   'Оргсхема',
+                    isActive: false,
+                },
+                {
+                    anchor:   'Kolesa Team',
+                    isActive: false,
+                },
+                {
+                    anchor:   'Kolesa Shop',
+                    isActive: true,
+                },
+                {
+                    anchor:   'Картина компании',
+                    isActive: false,
+                },
+                {
+                    anchor:   'Новости',
+                    isActive: false,
+                },
+                {
+                    anchor:   'Education',
+                    isActive: false,
+                },
+                {
+                    anchor:   'Guidelines',
+                    isActive: false,
+                },
+                {
+                    anchor:   'Библиотека',
+                    isActive: false,
+                },
+                {
+                    anchor:   'FAQ',
+                    isActive: false,
+                },
             ],
         };
     },
@@ -454,6 +486,14 @@ export default {
     methods: {
         toggleModal() {
             this.isShowModal = !this.isShowModal;
+        },
+
+        toggleActive(navlink) {
+            this.navbar.forEach((nav) => {
+                nav.isActive = false;
+            });
+
+            navlink.isActive = true;
         },
 
         findNewest(array) {
