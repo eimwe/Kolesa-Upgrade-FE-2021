@@ -292,6 +292,10 @@
                                 @click="toggleActive(navlink)"
                                 href="#">
                                 {{navlink.anchor}}
+                                <span class="accent"
+                                    v-if="navlink.isHighlighted">
+                                    {{navlink.highlight}}
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -446,12 +450,16 @@ export default {
                     isActive: false,
                 },
                 {
-                    anchor:   'Kolesa Team',
-                    isActive: false,
+                    anchor:        'Kolesa',
+                    highlight:     'Team',
+                    isActive:      false,
+                    isHighlighted: true,
                 },
                 {
-                    anchor:   'Kolesa Shop',
-                    isActive: true,
+                    anchor:        'Kolesa',
+                    highlight:     'Shop',
+                    isActive:      true,
+                    isHighlighted: true,
                 },
                 {
                     anchor:   'Картина компании',
