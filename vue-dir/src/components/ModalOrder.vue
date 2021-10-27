@@ -1,38 +1,36 @@
 <template>
     <div v-if="isOpen"
-         @click="toggleModal"
+         @click.self="toggleModal"
          class="overlay flex-container">
         <div class="modal modal--shopitem">
             <button
+                v-if="isOpen"
+                @click.self="toggleModal"
                 class="modal__close"
                 type="button">Закрыть</button>
             <div class="modal__content flex-container">
                 <div class="gallery" aria-roledescription="carousel">
                     <ul class="gallery__fullsize flex-container">
-                        <li class="gallery__slide">
-                            <img class="gallery__full" src="@/assets/images/gallery/shirt-01.webp">
-                        </li>
-                        <li class="gallery__slide gallery__slide--active">
-                            <img class="gallery__full" src="@/assets/images/gallery/shirt-02.webp">
-                        </li>
-                        <li class="gallery__slide">
-                            <img class="gallery__full" src="@/assets/images/gallery/shirt-03.webp">
+                        <li class="gallery__slide"
+                            :class="getActiveSlide(index) ? 'gallery__slide--active' : '' "
+                            v-for="(fullsize, index) in data.fullsized"
+                            :key="fullsize.id">
+                            <img class="gallery__full"
+                                :src="require(`../assets/images/gallery/` + data.fullsized[index])">
                         </li>
                     </ul>
                     <ul class="gallery__thumbs flex-container">
-                        <li class="gallery__thumb">
-                            <img class="gallery__preview" src="@/assets/images/gallery/shirt-thumb-01.webp">
-                        </li>
-                        <li class="gallery__thumb gallery__thumb--active">
-                            <img class="gallery__preview" src="@/assets/images/gallery/shirt-thumb-02.webp">
-                        </li>
-                        <li class="gallery__thumb">
-                            <img class="gallery__preview" src="@/assets/images/gallery/shirt-thumb-03.webp">
+                        <li class="gallery__thumb"
+                            :class="getActiveSlide(index) ? 'gallery__thumb--active' : '' "
+                            v-for="(thumb, index) in data.thumbs"
+                            :key="thumb.id">
+                            <img class="gallery__preview"
+                                :src="require(`../assets/images/gallery/` + data.thumbs[index])">
                         </li>
                     </ul>
                 </div>
                 <section class="modal__desc">
-                    <h2 class="modal__title">Футболка</h2>
+                    <h2 class="modal__title">{{ data.title }}</h2>
                     <span class="modal__price"></span>
                     <div class="modal__user flex-container">
                         <button class="btn btn--hero" type="submit" form="order" value="Submit">Заказать</button>
@@ -115,7 +113,7 @@
                     </form>
                     <dl class="modal__highlights">
                         <dt class="modal__highlight">Детали:</dt>
-                        <dd class="modal__details"></dd>
+                        <dd class="modal__details">{{ data.details }}</dd>
                         <dt class="modal__highlight">Как выбрать размер:</dt>
                         <dd class="modal__details">Написать дяде Рику для уточнения.</dd>
                     </dl>
@@ -130,6 +128,7 @@ export default {
     name:  'ModalOrder',
     props: {
         isOpen: Boolean,
+        data:   Object,
     },
     data() {
         return {
@@ -139,6 +138,14 @@ export default {
     methods: {
         toggleModal() {
             this.$emit('toggle');
+        },
+
+        getActiveSlide(slide) {
+            if (slide === 0) {
+                return true;
+            }
+
+            return false;
         },
     },
 };
