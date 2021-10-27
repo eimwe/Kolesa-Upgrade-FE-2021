@@ -43,20 +43,7 @@
                         src="./assets/images/main/hero-banner.webp"
                         alt="Летняя распродажа нашего мерча">
                 </picture>
-                <nav class="guide" aria-label="Quick user guide">
-                    <a class="guide__line guide__line--add" href="#"
-                        title="Зачисление баллов на счет">
-                        Получить баллы
-                    </a>
-                    <a class="guide__line guide__line--knowhow" href="rulebook.html"
-                        title="Узнать способы получения баллов">
-                        Как получить баллы
-                    </a>
-                    <a class="guide__line guide__line--gift" href="#"
-                        title="Перечислить баллы коллеге">
-                        Подарить баллы
-                    </a>
-                </nav>
+                <GuideBar></GuideBar>
                 <div class="main__stack">
                     <form id="switch-tabs" action="#" method="POST">
                         <fieldset class="formgroup" aria-label="Category tabs">
@@ -192,12 +179,14 @@
 <script>
 import Footer from './components/Footer.vue';
 import ModalOrder from './components/ModalOrder.vue';
+import GuideBar from './components/GuideBar.vue';
 
 export default {
     name:       'App',
     components: {
         Footer,
         ModalOrder,
+        GuideBar,
     },
     data() {
         return {
