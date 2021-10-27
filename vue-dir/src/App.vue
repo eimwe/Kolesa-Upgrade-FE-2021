@@ -17,12 +17,7 @@
                 Kolesa Group
             </a>
             <div class="header__container--inner flex-container">
-                <form id="search" action="#" method="GET">
-                    <div class="searcher">
-                        <input class="searcher__field" type="search" name="search-query" placeholder="Поиск">
-                        <input class="searcher__btn" type="submit" value="Найти">
-                    </div>
-                </form>
+                <SearchBar></SearchBar>
                 <User @scored="getScore"></User>
             </div>
         </div>
@@ -154,6 +149,7 @@ import ModalOrder from './components/ModalOrder.vue';
 import GuideBar from './components/GuideBar.vue';
 import NavBar from './components/NavBar.vue';
 import User from './components/User.vue';
+import SearchBar from './components/SearchBar.vue';
 
 export default {
     name:       'App',
@@ -163,6 +159,7 @@ export default {
         GuideBar,
         NavBar,
         User,
+        SearchBar,
     },
     data() {
         return {
