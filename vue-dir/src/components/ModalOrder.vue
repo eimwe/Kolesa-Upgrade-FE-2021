@@ -31,9 +31,15 @@
                 </div>
                 <section class="modal__desc">
                     <h2 class="modal__title">{{ data.title }}</h2>
-                    <span class="modal__price"></span>
+                    <span class="modal__price">{{ data.price }} баллов</span>
                     <div class="modal__user flex-container">
-                        <button class="btn btn--hero" type="submit" form="order" value="Submit">Заказать</button>
+                        <button class="btn btn--hero"
+                            type="submit"
+                            form="order"
+                            value="Submit"
+                            @click.prevent="orderItem">
+                            Заказать
+                        </button>
                         <div class="modal__score">
                             <p class="modal__amount">
                                 Твой баланс: <span class="modal__budget">3 945 баллов</span>
@@ -146,6 +152,10 @@ export default {
             }
 
             return false;
+        },
+
+        orderItem() {
+            this.$emit('order', this.data.price);
         },
     },
 };

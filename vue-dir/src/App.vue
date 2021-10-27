@@ -3,6 +3,7 @@
     <ModalOrder
         :isOpen="isShowModal"
         :data="modalData"
+        @order="setScore"
         @toggle="toggleModal">
     </ModalOrder>
     <header class="header">
@@ -22,15 +23,7 @@
                         <input class="searcher__btn" type="submit" value="Найти">
                     </div>
                 </form>
-                <a class="user" href="#" title="Перейти в свой профиль">
-                    <figure class="user__profile flex-container">
-                        <img class="user__avatar" src="./assets/images/main/avatar.webp" alt="Фото пользователя">
-                        <figcaption class="user__account">
-                            <p class="user__name">Мортиджан</p>
-                            <span class="user__budget">300 баллов</span>
-                        </figcaption>
-                    </figure>
-                </a>
+                <User @scored="getScore"></User>
             </div>
         </div>
     </header>
@@ -160,6 +153,7 @@ import Footer from './components/Footer.vue';
 import ModalOrder from './components/ModalOrder.vue';
 import GuideBar from './components/GuideBar.vue';
 import NavBar from './components/NavBar.vue';
+import User from './components/User.vue';
 
 export default {
     name:       'App',
@@ -168,6 +162,7 @@ export default {
         ModalOrder,
         GuideBar,
         NavBar,
+        User,
     },
     data() {
         return {
@@ -377,6 +372,7 @@ export default {
             items:       [],
             isShowModal: false,
             modalData:   {},
+            user:        '',
         };
     },
     created() {
@@ -386,6 +382,11 @@ export default {
         passDataToModal(data) {
             this.toggleModal();
             this.modalData = data;
+        },
+
+        getScore(score) {
+            this.user = score;
+            console.log(score);
         },
 
         toggleModal() {
@@ -419,6 +420,20 @@ export default {
             this.items = category;
 
             return category;
+        },
+
+        setScore(cost) {
+            this.toggleModal();
+
+            if (this.score < cost || this.score === 0) {
+                alert(`Недостаточно баллов для покупки. Текущий баланс: ${this.score}`);
+
+                return false;
+            }
+
+            this.score -= cost;
+
+            return true;
         },
     },
 };
