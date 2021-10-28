@@ -1,9 +1,9 @@
 <template>
     <a class="user" href="#" title="Перейти в свой профиль">
         <figure class="user__profile flex-container">
-            <img class="user__avatar" src="../assets/images/main/avatar.webp" alt="Фото пользователя">
+            <img class="user__avatar" :src="avatar" alt="Фото пользователя">
             <figcaption class="user__account">
-                <p class="user__name">Мортиджан</p>
+                <p class="user__name">{{ name }}</p>
                 <span class="user__budget" :scoreData="getScore">{{ score }} баллов</span>
             </figcaption>
         </figure>
@@ -11,17 +11,29 @@
 </template>
 
 <script>
+import axios from '../axios';
+
 export default {
     name: 'User',
     created() {
-        this.score = 900;
+        axios.get('/templates/7ZW3y5GAuIge/data')
+            .then((response) => {
+                this.score = response.data.score;
+                this.name = response.data.name;
+                this.avatar = response.data.avatarUrl;
+            })
+            .catch((err) => {
+                console.warn(err);
+            });
     },
     props: {
         points: Number,
     },
     data() {
         return {
-            score:     this.score,
+            score:     '',
+            name:      '',
+            avatar:    '',
             scoreData: '',
         };
     },
