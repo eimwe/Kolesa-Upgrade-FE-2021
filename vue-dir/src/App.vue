@@ -144,6 +144,7 @@
 </template>
 
 <script>
+import axios from './axios';
 import Footer from './components/Footer.vue';
 import ModalOrder from './components/ModalOrder.vue';
 import GuideBar from './components/GuideBar.vue';
@@ -373,6 +374,10 @@ export default {
         };
     },
     created() {
+        axios.get('/templates/-_RLsEGjof6i/data')
+            .then((response) => {
+                console.log(response);
+            });
         this.mergeEverything();
     },
     methods: {

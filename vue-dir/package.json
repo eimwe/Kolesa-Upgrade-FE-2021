@@ -9,6 +9,7 @@
     "doc": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
