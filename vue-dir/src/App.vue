@@ -177,30 +177,38 @@ export default {
 
     },
     created() {
-        axios.get('/templates/-_RLsEGjof6i/data')
-            .then((response) => {
-                this.clothes = response.data;
-                this.mergeEverything();
-            })
-            .catch((err) => {
-                console.warn(err);
-            })
-            .finally(() => {
-                this.mergeEverything();
-            });
-
-        axios.get('/templates/q3OPxRyEcPvP/data')
-            .then((response) => {
-                this.accessories = response.data;
-            })
-            .catch((err) => {
-                console.warn(err);
-            })
-            .finally(() => {
-                this.mergeEverything();
-            });
+        this.fetchInfo();
     },
     methods: {
+        getClothes() {
+            axios.get('/templates/-_RLsEGjof6i/data')
+                .then((response) => {
+                    this.clothes = response.data;
+                })
+                .catch((err) => {
+                    console.warn(err);
+                });
+        },
+
+        getAccessories() {
+            axios.get('/templates/q3OPxRyEcPvP/data')
+                .then((response) => {
+                    this.accessories = response.data;
+                })
+                .catch((err) => {
+                    console.warn(err);
+                });
+        },
+
+        async fetchInfo() {
+            await this.getClothes();
+            await this.getAccessories();
+
+            setTimeout(() => {
+                this.mergeEverything();
+            }, 1000);
+        },
+
         passDataToModal(data) {
             this.toggleModal();
             this.modalData = data;
