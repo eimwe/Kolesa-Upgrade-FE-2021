@@ -13,19 +13,19 @@
                     <ul class="gallery__fullsize flex-container">
                         <li class="gallery__slide"
                             :class="getActiveSlide(index) ? 'gallery__slide--active' : '' "
-                            v-for="(fullsize, index) in data.fullsized"
+                            v-for="(fullsize, index) in data.images"
                             :key="fullsize.id">
                             <img class="gallery__full"
-                                :src="require(`../assets/images/gallery/` + data.fullsized[index])">
+                                :src="data.images[index]">
                         </li>
                     </ul>
                     <ul class="gallery__thumbs flex-container">
                         <li class="gallery__thumb"
                             :class="getActiveSlide(index) ? 'gallery__thumb--active' : '' "
-                            v-for="(thumb, index) in data.thumbs"
+                            v-for="(thumb, index) in data.images"
                             :key="thumb.id">
                             <img class="gallery__preview"
-                                :src="require(`../assets/images/gallery/` + data.thumbs[index])">
+                                :src="data.images[index]">
                         </li>
                     </ul>
                 </div>
@@ -119,7 +119,7 @@
                     </form>
                     <dl class="modal__highlights">
                         <dt class="modal__highlight">Детали:</dt>
-                        <dd class="modal__details">{{ data.details }}</dd>
+                        <dd class="modal__details">{{ data.description }}</dd>
                         <dt class="modal__highlight">Как выбрать размер:</dt>
                         <dd class="modal__details">Написать дяде Рику для уточнения.</dd>
                     </dl>
