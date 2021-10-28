@@ -16,15 +16,7 @@ import axios from '../axios';
 export default {
     name: 'User',
     created() {
-        axios.get('/templates/7ZW3y5GAuIge/data')
-            .then((response) => {
-                this.score = response.data.score;
-                this.name = response.data.name;
-                this.avatar = response.data.avatarUrl;
-            })
-            .catch((err) => {
-                console.warn(err);
-            });
+        this.getUserData();
     },
     props: {
         points: Number,
@@ -38,6 +30,18 @@ export default {
         };
     },
     methods: {
+        getUserData() {
+            axios.get('/templates/7ZW3y5GAuIge/data')
+                .then((response) => {
+                    this.score = response.data.score;
+                    this.name = response.data.name;
+                    this.avatar = response.data.avatarUrl;
+                })
+                .catch((err) => {
+                    console.warn(err);
+                });
+        },
+
         getScore() {
             this.$emit('scored', this.scoreData);
         },
