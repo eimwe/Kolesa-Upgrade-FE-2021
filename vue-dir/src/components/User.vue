@@ -4,7 +4,7 @@
             <img class="user__avatar" :src="avatar" alt="Фото пользователя">
             <figcaption class="user__account">
                 <p class="user__name">{{ name }}</p>
-                <span class="user__budget" :scoreData="getScore">{{ score }} баллов</span>
+                <span class="user__budget">{{ score }} баллов</span>
             </figcaption>
         </figure>
     </a>
@@ -18,15 +18,11 @@ export default {
     created() {
         this.getUserData();
     },
-    props: {
-        points: Number,
-    },
     data() {
         return {
-            score:     '',
-            name:      '',
-            avatar:    '',
-            scoreData: '',
+            score:  '',
+            name:   '',
+            avatar: '',
         };
     },
     methods: {
@@ -40,10 +36,6 @@ export default {
                 .catch((err) => {
                     console.warn(err);
                 });
-        },
-
-        getScore() {
-            this.$emit('scored', this.scoreData);
         },
     },
 };

@@ -18,7 +18,7 @@
             </a>
             <div class="header__container--inner flex-container">
                 <SearchBar></SearchBar>
-                <User @scored="getScore"></User>
+                <User></User>
             </div>
         </div>
     </header>
@@ -170,11 +170,7 @@ export default {
             items:       [],
             isShowModal: false,
             modalData:   {},
-            user:        '',
         };
-    },
-    mounted() {
-
     },
     created() {
         this.fetchInfo();
@@ -212,11 +208,6 @@ export default {
         passDataToModal(data) {
             this.toggleModal();
             this.modalData = data;
-        },
-
-        getScore(score) {
-            this.user = score;
-            console.log(score);
         },
 
         toggleModal() {
