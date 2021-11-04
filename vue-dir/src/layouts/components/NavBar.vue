@@ -5,19 +5,17 @@
                 v-for="navlink in navbar"
                 :key="navlink.id"
             >
-                <a class="sidebar__link"
-                    :class="{
-                        'sidebar__link--active': navlink.isActive,
-                        '': !navlink.isActive,
-                    }"
-                    @click="toggleActive(navlink)"
-                    href="#">
+                <router-link class="sidebar__link"
+                    exact
+                    :to="navlink.href"
+                    active-class="sidebar__link--active"
+                    >
                     {{navlink.anchor}}
                     <span class="accent"
                         v-if="navlink.isHighlighted">
                         {{navlink.highlight}}
                     </span>
-                </a>
+                </router-link>
             </li>
         </ul>
     </nav>
@@ -30,22 +28,25 @@ export default {
         return {
             navbar: [
                 {
+                    href:     '/',
                     anchor:   'Оргсхема',
                     isActive: false,
                 },
                 {
+                    href:          '/about',
                     anchor:        'Kolesa',
                     highlight:     'Team',
                     isActive:      false,
                     isHighlighted: true,
                 },
                 {
+                    href:          '/shop',
                     anchor:        'Kolesa',
                     highlight:     'Shop',
                     isActive:      true,
                     isHighlighted: true,
                 },
-                {
+                /* {
                     anchor:   'Картина компании',
                     isActive: false,
                 },
@@ -68,7 +69,7 @@ export default {
                 {
                     anchor:   'FAQ',
                     isActive: false,
-                },
+                }, */
             ],
         };
     },
