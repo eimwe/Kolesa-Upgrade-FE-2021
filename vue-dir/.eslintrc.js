@@ -1,82 +1,82 @@
 module.exports = {
-  root: true,
-  env: {
-    node: true,
-  },
-  extends: [
-    'plugin:vue/essential',
-    '@vue/airbnb',
-  ],
-  parserOptions: {
-    parser: 'babel-eslint',
-  },
-  rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'max-len': ['error', { 'code': 120, 'tabWidth': 4, 'ignoreComments': true }],
-    'func-names': ['error', 'never'],
-        'indent': ['error', 4, { 'SwitchCase': 1, 'ignoredNodes': ['TemplateLiteral'] }],
-        'key-spacing': ['error', { 'align': 'value' }],
-        'no-multi-spaces': ['error', { 'exceptions': { 'VariableDeclarator': true, 'ImportDeclaration': true } }],
-        'no-new': 'off',
-        'no-param-reassign': 'off',
-        'linebreak-style': 'off',
-        'no-underscore-dangle': ['error', { 'enforceInMethodNames': false, 'allowAfterThis': true }],
+    root: true,
+    env:  {
+        node: true,
+    },
+    extends: [
+        'plugin:vue/essential',
+        '@vue/airbnb',
+    ],
+    parserOptions: {
+        parser: 'babel-eslint',
+    },
+    rules: {
+        'no-console':                      process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'no-debugger':                     process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+        'max-len':                         ['error', { code: 120, tabWidth: 4, ignoreComments: true }],
+        'func-names':                      ['error', 'never'],
+        indent:                            ['error', 4, { SwitchCase: 1, ignoredNodes: ['TemplateLiteral'] }],
+        'key-spacing':                     ['error', { align: 'value' }],
+        'no-multi-spaces':                 ['error', { exceptions: { VariableDeclarator: true, ImportDeclaration: true } }],
+        'no-new':                          'off',
+        'no-param-reassign':               'off',
+        'linebreak-style':                 'off',
+        'no-underscore-dangle':            ['error', { enforceInMethodNames: false, allowAfterThis: true }],
         'padding-line-between-statements': [
             'error',
             {
-                'blankLine': 'always',
-                'prev':      '*',
-                'next':      'return'
+                blankLine: 'always',
+                prev:      '*',
+                next:      'return',
             },
             {
-                'blankLine': 'always',
-                'prev':      [
+                blankLine: 'always',
+                prev:      [
                     'const',
                     'let',
-                    'var'
+                    'var',
                 ],
-                'next': '*'
+                next: '*',
             },
             {
-                'blankLine': 'any',
-                'prev':      [
+                blankLine: 'any',
+                prev:      [
                     'const',
                     'let',
-                    'var'
+                    'var',
                 ],
-                'next': [
+                next: [
                     'const',
                     'let',
-                    'var'
-                ]
+                    'var',
+                ],
             },
             {
-                'blankLine': 'always',
-                'prev':      'if',
-                'next':      '*'
+                blankLine: 'always',
+                prev:      'if',
+                next:      '*',
             },
             {
-                'blankLine': 'always',
-                'prev':      '*',
-                'next':      'if'
+                blankLine: 'always',
+                prev:      '*',
+                next:      'if',
             },
             {
-                'blankLine': 'always',
-                'prev':      'import',
-                'next':      '*'
+                blankLine: 'always',
+                prev:      'import',
+                next:      '*',
             },
             {
-                'blankLine': 'any',
-                'prev':      'import',
-                'next':      'import'
+                blankLine: 'any',
+                prev:      'import',
+                next:      'import',
             },
             {
-                'blankLine': 'always',
-                'prev':      '*',
-                'next':      'export'
-            }
+                blankLine: 'always',
+                prev:      '*',
+                next:      'export',
+            },
         ],
-        'arrow-parens': ['error', 'as-needed', { 'requireForBlockBody': true }],
-  },
+        'arrow-parens': ['error', 'as-needed', { requireForBlockBody: true }],
+    },
 };
