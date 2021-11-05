@@ -1,4 +1,5 @@
-@import '../helpers/mixins';
+@use '../global/variables' as *;
+@use '../helpers/mixins';
 
 .formgroup {
     margin: 0;
@@ -10,7 +11,7 @@
     }
 
     &__caption--catalog {
-        @include visually-hidden;
+        @include mixins.visually-hidden;
     }
 
     &__btn {

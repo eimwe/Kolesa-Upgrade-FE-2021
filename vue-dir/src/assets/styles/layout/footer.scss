@@ -1,5 +1,6 @@
-@import '../blocks/socialbar';
-@import '../helpers/mixins';
+@use '../global/variables' as *;
+@use '../blocks/socialbar';
+@use '../helpers/mixins';
 
 .footer {
     padding: 20px 0 22px 0;
@@ -17,7 +18,7 @@
 
     &__invitation {
         .line-break {
-            @include line-break;
+            @include mixins.line-break;
         }
     }
 }

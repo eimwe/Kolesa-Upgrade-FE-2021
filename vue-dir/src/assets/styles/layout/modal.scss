@@ -1,4 +1,5 @@
-@import '../helpers/mixins';
+@use '../global/variables' as *;
+@use '../helpers/mixins';
 
 .modal {
     position: relative;
@@ -55,7 +56,7 @@
     }
 
     &__budget {
-        @include line-break;
+        @include mixins.line-break;
 
         font-size: $fs-alerts;
         color: $dark;
@@ -93,7 +94,7 @@
         transition: transform $duration;
 
         &:hover {
-            @include scaler;
+            @include mixins.scaler;
         }
     }
 }

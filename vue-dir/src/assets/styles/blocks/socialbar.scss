@@ -1,3 +1,6 @@
+@use '../global/variables' as *;
+@use '../helpers/mixins';
+
 .socialbar {
     width: 88px;
 
@@ -11,19 +14,19 @@
         transition: transform $duration;
 
         &--insta {
-            background-image: url('../../assets/images/main/insta.svg');
+            background-image: url('./assets/images/main/insta.svg');
         }
 
         &--yt {
-            background-image: url('../../assets/images/main/yt.svg');
+            background-image: url('./assets/images/main/yt.svg');
         }
 
         &--vk {
-            background-image: url('../../assets/images/main/vk.svg');
+            background-image: url('./assets/images/main/vk.svg');
         }
 
         &:hover {
-            @include scaler;
+            @include mixins.scaler;
         }
     }
 }

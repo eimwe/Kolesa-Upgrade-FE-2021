@@ -59,3 +59,11 @@ export default {
     },
 };
 </script>
+
+<style lang="scss">
+@use './assets/styles/global/global';
+@use './assets/styles/layout/layout';
+@use './assets/styles/layout/header';
+@use './assets/styles/layout/footer';
+@use './assets/styles/layout/sidebar';
+</style>
