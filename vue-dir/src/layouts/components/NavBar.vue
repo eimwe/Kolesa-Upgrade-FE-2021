@@ -6,7 +6,7 @@
                 :key="navlink.id"
             >
                 <router-link class="sidebar__link"
-                    exact
+                    :exact="navlink.isExact"
                     :to="navlink.href"
                     active-class="sidebar__link--active"
                     >
@@ -28,59 +28,26 @@ export default {
         return {
             navbar: [
                 {
-                    href:     '/',
-                    anchor:   'Оргсхема',
-                    isActive: false,
+                    href:    '/',
+                    anchor:  'Оргсхема',
+                    isExact: true,
                 },
                 {
                     href:          '/about',
                     anchor:        'Kolesa',
                     highlight:     'Team',
-                    isActive:      false,
+                    isExact:       true,
                     isHighlighted: true,
                 },
                 {
                     href:          '/shop',
                     anchor:        'Kolesa',
                     highlight:     'Shop',
-                    isActive:      true,
+                    isExact:       false,
                     isHighlighted: true,
                 },
-                /* {
-                    anchor:   'Картина компании',
-                    isActive: false,
-                },
-                {
-                    anchor:   'Новости',
-                    isActive: false,
-                },
-                {
-                    anchor:   'Education',
-                    isActive: false,
-                },
-                {
-                    anchor:   'Guidelines',
-                    isActive: false,
-                },
-                {
-                    anchor:   'Библиотека',
-                    isActive: false,
-                },
-                {
-                    anchor:   'FAQ',
-                    isActive: false,
-                }, */
             ],
         };
-    },
-    methods: {
-        toggleActive(navlink) {
-            this.navbar.forEach((nav) => {
-                nav.isActive = false;
-            });
-
-            navlink.isActive = true;
-        },
     },
 };
 </script>

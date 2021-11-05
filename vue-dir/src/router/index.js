@@ -24,9 +24,9 @@ const routes = [
         component: () => import(/* webpackChunkName: "shop" */ '../views/shop/Shop.vue'),
     },
     {
-        path:      '/rules',
+        path:      '/shop/rules',
         name:      'Rules',
-        component: () => import(/* webpackChunkName: "shop" */ '../views/rules/Rules.vue'),
+        component: () => import(/* webpackChunkName: "rules" */ '../views/rules/Rules.vue'),
     },
 ];
 
