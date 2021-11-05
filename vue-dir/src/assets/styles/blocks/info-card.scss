@@ -3,6 +3,46 @@
 
 .info-card {
     $root: &;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
     border-radius: $radius-sm;
     box-shadow: 0 2px 10px rgba(28, 24, 25, 0.1);
+    transition: transform $duration;
+
+    &__img-container {
+        margin-bottom: 8px;
+    }
+
+    &__image {
+        margin: 0;
+    }
+
+    &__score {
+        display: inline-block;
+        padding-inline: 8px;
+        margin-bottom: 8px;
+        font-size: $fs-small;
+        border-radius: $radius-xs;
+        background-color: $aliceblue;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .base-card__caption {
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .base-card__title {
+        margin-bottom: 8px;
+        white-space: initial;
+        text-overflow: initial;
+    }
+
+    .btn--hero {
+        margin-top: auto;
+    }
 }
