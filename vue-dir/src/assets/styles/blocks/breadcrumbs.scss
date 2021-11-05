@@ -1,0 +1,22 @@
+@use '../global/variables' as *;
+
+.breadcrumbs {
+    margin-bottom: 24px;
+
+    &__link {
+        color: $blue;
+
+        &::after {
+            content: ' / ';
+        }
+
+        &:last-child {
+            pointer-events: none;
+            opacity: .6;
+
+            &::after {
+                content: '';
+            }
+        }
+    }
+}
