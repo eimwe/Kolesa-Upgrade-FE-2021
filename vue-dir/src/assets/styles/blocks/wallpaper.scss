@@ -1,0 +1,9 @@
+@use '../global/variables' as *;
+
+.wallpaper {
+    margin: 0;
+
+    &__title {
+        font-size: $fs-headings;
+    }
+}
