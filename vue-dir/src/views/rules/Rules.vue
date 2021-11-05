@@ -2,28 +2,24 @@
     <div id="app">
         <div class="main__container">
             <div class="main__stack">
-                <output class="main__tiles"
-                    name="card-container"
-                    role="tabpanel"
-                    aria-live="polite"
-                    tabindex="0">
-
-                </output>
+                <InfoCard></InfoCard>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import InfoCard from './components/InfoCard.vue';
 
 export default {
     name:       'Rules',
     components: {
-
+        InfoCard,
     },
 
     data() {
         return {
+            items: [],
         };
     },
 };
