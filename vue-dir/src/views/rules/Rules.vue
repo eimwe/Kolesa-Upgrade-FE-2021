@@ -1,6 +1,7 @@
 <template>
     <div id="app">
         <div class="main__container">
+            <h1 class="main__title">Как получить баллы</h1>
             <div class="main__stack">
                 <InfoCard></InfoCard>
             </div>
