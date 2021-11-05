@@ -5,7 +5,8 @@
             :class="navbutton.className"
             :key="navbutton.id"
             :href="navbutton.link"
-            :title="navbutton.title">
+            :title="navbutton.title"
+            @click.prevent="goToRules(navbutton.route)">
             {{navbutton.textNode}}
         </a>
     </nav>
@@ -24,7 +25,8 @@ export default {
                     textNode:  'Получить баллы',
                 },
                 {
-                    link:      'rulebook.html',
+                    link:      '#',
+                    route:     'Rules',
                     title:     'Узнать способы получения баллов',
                     className: 'guide__line--knowhow',
                     textNode:  'Как получить баллы',
@@ -37,6 +39,12 @@ export default {
                 },
             ],
         };
+    },
+
+    methods: {
+        goToRules(route) {
+            this.$router.push({ name: route });
+        },
     },
 };
 </script>
