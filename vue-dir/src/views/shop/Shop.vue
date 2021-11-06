@@ -23,7 +23,7 @@
                         <div class="formgroup__btn"
                             tabindex="0">
                             <input class="formgroup__input"
-                                @change="mergeEverything(everything)"
+                                @change="mergeEverything($store.state.everything)"
                                 type="radio"
                                 data-key="all"
                                 id="category-all"
@@ -37,7 +37,7 @@
                         <div class="formgroup__btn"
                             tabindex="0">
                             <input class="formgroup__input"
-                                @change="getCategory(clothes)"
+                                @change="getCategory($store.state.clothes)"
                                 type="radio"
                                 data-key="apparel"
                                 id="category-apparel"
@@ -51,7 +51,7 @@
                         <div class="formgroup__btn"
                             tabindex="0">
                             <input class="formgroup__input"
-                                @change="getCategory(accessories)"
+                                @change="getCategory($store.state.accessories)"
                                 type="radio"
                                 data-key="misc"
                                 id="category-misc"
@@ -105,7 +105,6 @@
 </template>
 
 <script>
-import axios from '../../axios';
 import ModalOrder from './components/ModalOrder.vue';
 import GuideBar from './components/GuideBar.vue';
 
@@ -118,9 +117,6 @@ export default {
 
     data() {
         return {
-            clothes:     [],
-            accessories: [],
-            everything:  [],
             items:       [],
             isShowModal: false,
             modalData:   {},
@@ -133,23 +129,11 @@ export default {
 
     methods: {
         getClothes() {
-            axios.get('/templates/-_RLsEGjof6i/data')
-                .then((response) => {
-                    this.clothes = response.data;
-                })
-                .catch((err) => {
-                    console.warn(err);
-                });
+            this.$store.dispatch('fetchClothesInfo');
         },
 
         getAccessories() {
-            axios.get('/templates/q3OPxRyEcPvP/data')
-                .then((response) => {
-                    this.accessories = response.data;
-                })
-                .catch((err) => {
-                    console.warn(err);
-                });
+            this.$store.dispatch('fetchAccessoriesInfo');
         },
 
         async fetchInfo() {
@@ -188,7 +172,9 @@ export default {
         },
 
         mergeEverything(category) {
-            category = [...this.clothes, ...this.accessories];
+            this.$store.commit('updateEverything');
+
+            category = this.$store.state.everything;
             this.findNewest(category);
             this.items = category;
 
