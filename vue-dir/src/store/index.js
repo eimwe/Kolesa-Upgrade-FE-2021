@@ -28,6 +28,9 @@ export default new Vuex.Store({
         updateEverything(state) {
             state.everything = [...state.clothes, ...state.accessories];
         },
+        setNewScore(state, newScore) {
+            state.userInfo.score -= newScore;
+        },
     },
     actions: {
         fetchUserInfo({ commit }) {

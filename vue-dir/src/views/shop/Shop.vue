@@ -3,7 +3,6 @@
         <ModalOrder
             :isOpen="isShowModal"
             :data="modalData"
-            @order="setScore"
             @toggle="toggleModal">
         </ModalOrder>
         <div class="main__container">
@@ -179,20 +178,6 @@ export default {
             this.items = category;
 
             return category;
-        },
-
-        setScore(cost) {
-            this.toggleModal();
-
-            if (this.score < cost || this.score === 0) {
-                alert(`Недостаточно баллов для покупки. Текущий баланс: ${this.score}`);
-
-                return false;
-            }
-
-            this.score -= cost;
-
-            return true;
         },
     },
 };

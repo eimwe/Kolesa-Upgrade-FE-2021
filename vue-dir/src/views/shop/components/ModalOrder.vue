@@ -42,7 +42,7 @@
                         </button>
                         <div class="modal__score">
                             <p class="modal__amount">
-                                Твой баланс: <span class="modal__budget">3 945 баллов</span>
+                                Твой баланс: <span class="modal__budget">{{ $store.state.userInfo.score }} баллов</span>
                             </p>
                         </div>
                     </div>
@@ -155,7 +155,17 @@ export default {
         },
 
         orderItem() {
-            this.$emit('order', this.data.price);
+            const { score } = this.$store.state.userInfo;
+
+            if (score - this.data.price <= 0) {
+                alert(`Недостаточно баллов для покупки. Текущий баланс: ${score}`);
+
+                return false;
+            }
+
+            this.$store.commit('setNewScore', this.data.price);
+
+            return true;
         },
     },
 };
