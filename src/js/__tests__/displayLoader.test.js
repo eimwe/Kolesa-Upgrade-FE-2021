@@ -1,7 +1,3 @@
-const errorElement = document.createElement('DIV');
-
-errorElement.id = 'loader';
-
 const displayLoader = (noError) => {
     if (!noError) {
         return false;
