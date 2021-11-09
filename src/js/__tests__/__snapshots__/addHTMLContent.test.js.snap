@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Проверка блока #app Вставка контента в #app 1`] = `
+<div
+  id="app"
+>
+  mock
+</div>
+`;

@@ -1,4 +1,4 @@
-export default function addContent(data) {
+export default function addHTMLContent(data) {
     const appElement = document.querySelector('#app');
 
     appElement.innerHTML = data.html;
