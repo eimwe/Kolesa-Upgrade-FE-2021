@@ -4,5 +4,7 @@ export default function addContent(data) {
     appElement.innerHTML = data.html;
     appElement.style.display = 'block';
 
-    return appElement.querySelectorAll('button');
+    const buttonNodes = document.body.querySelectorAll('button');
+
+    return buttonNodes;
 }
