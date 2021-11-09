@@ -34,15 +34,24 @@
                     <span class="modal__price">{{ data.price }} баллов</span>
                     <div class="modal__user flex-container">
                         <button class="btn btn--hero"
+                            v-if="loan === false"
                             type="submit"
                             form="order"
                             value="Submit"
                             @click.prevent="orderItem">
                             Заказать
                         </button>
+                        <button class="btn btn--help"
+                            v-if="loan === true"
+                            type="submit"
+                            form="order"
+                            value="Submit"
+                            @click.prevent="toggleModal">
+                            Попросить {{ this.askPoints() }} баллов
+                        </button>
                         <div class="modal__score">
                             <p class="modal__amount">
-                                Твой баланс: <span class="modal__budget">3 945 баллов</span>
+                                Твой баланс: <span class="modal__budget">{{ $store.state.userInfo.score }} баллов</span>
                             </p>
                         </div>
                     </div>
@@ -139,6 +148,8 @@ export default {
     data() {
         return {
             isShowModal: false,
+            loan:        false,
+            loanSum:     '',
         };
     },
     methods: {
@@ -154,8 +165,33 @@ export default {
             return false;
         },
 
+        askPoints(points) {
+            this.loanSum = this.data.price - this.$store.state.userInfo.score;
+
+            if (points - this.data.price <= 0) {
+                this.loan = true;
+            }
+
+            if ((this.data.price - this.$store.state.userInfo.score) < 0) {
+                this.loan = false;
+                this.loanSum = '';
+            }
+
+            return this.loanSum;
+        },
+
         orderItem() {
-            this.$emit('order', this.data.price);
+            const { score } = this.$store.state.userInfo;
+
+            this.askPoints(score);
+
+            if (this.loan === true) {
+                return false;
+            }
+
+            this.$store.commit('setNewScore', this.data.price);
+
+            return score;
         },
     },
 };

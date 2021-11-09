@@ -5,13 +5,24 @@
 
     &--hero {
         background-color: $blue;
-        color: #fff;
+        color: $white;
         transition: all $duration;
 
         &:hover {
             color: $blue;
-            background-color: #fff;
+            background-color: $white;
             box-shadow: inset 0 0 0 1px $blue;
+        }
+    }
+
+    &--help {
+        background-color: $yellow;
+        color: $dark;
+        transition: all $duration;
+
+        &:hover {
+            background-color: $white;
+            box-shadow: inset 0 0 0 1px $yellow;
         }
     }
 

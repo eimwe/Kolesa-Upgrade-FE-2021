@@ -1,3 +1,5 @@
+@use '../global/variables' as *;
+
 .base-card {
     border-top-left-radius: $radius-sm;
     border-top-right-radius: $radius-sm;

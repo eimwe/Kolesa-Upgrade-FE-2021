@@ -1,6 +1,6 @@
-@import '../blocks/logo';
-@import '../blocks/searcher';
-@import '../blocks/user';
+@use '../blocks/logo';
+@use '../blocks/searcher';
+@use '../blocks/user';
 
 .menu-btn--mobile,
 .return-btn--mobile {

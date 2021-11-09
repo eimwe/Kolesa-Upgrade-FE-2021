@@ -1,6 +1,13 @@
+@use '../global/variables' as *;
 @import '../blocks/shop-card';
 
 .main {
+    &__title {
+        font-size: $fs-headings;
+        line-height: $lh-headings;
+        font-weight: 600;
+    }
+
     &__tiles {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));

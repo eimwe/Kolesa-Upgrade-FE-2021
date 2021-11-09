@@ -1,0 +1,6 @@
+@use './blocks/wallpaper';
+
+.wallpaper {
+    flex-direction: column-reverse;
+    margin-bottom: 10em;
+}
