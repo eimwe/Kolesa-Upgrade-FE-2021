@@ -1,9 +1,10 @@
 import { getItemsRequest, toggleFavoriteRequest } from './requests';
 import displayErrorElement from './displayError';
+import displayLoaderElement from './displayLoader';
 
 export default () => {
     displayErrorElement(false);
-    document.querySelector('#loader').style.display = 'block';
+    displayLoaderElement(true);
 
     getItemsRequest()
         .then(({ data }) => {
@@ -37,6 +38,6 @@ export default () => {
             displayErrorElement(true, e.message);
         })
         .finally(() => {
-            document.querySelector('#loader').style.display = 'none';
+            displayLoaderElement(false);
         });
 };
