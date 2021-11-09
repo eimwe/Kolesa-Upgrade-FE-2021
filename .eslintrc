@@ -1,19 +1,64 @@
 {
     "root": true,
-    "extends": "airbnb-base",
+    "extends": [
+        "airbnb-base",
+        "plugin:jest/recommended"
+    ],
+    "plugins": [
+        "jest"
+    ],
     "env": {
-        "browser": true
+        "browser": true,
+        "jest/globals": true
     },
     "rules": {
-        "max-len": ["error", 120, 4, { "ignoreComments": true }],
-        "func-names": ["error", "never"],
-        "indent": ["error", 4, { "SwitchCase": 1, "ignoredNodes": ["TemplateLiteral"] }],
-        "key-spacing": ["error", { "align": "value" }],
-        "no-multi-spaces": ["error", { "exceptions": { "VariableDeclarator": true, "ImportDeclaration": true } }],
+        "max-len": [
+            "error",
+            120,
+            4,
+            {
+                "ignoreComments": true
+            }
+        ],
+        "func-names": [
+            "error",
+            "never"
+        ],
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1,
+                "ignoredNodes": [
+                    "TemplateLiteral"
+                ]
+            }
+        ],
+        "key-spacing": [
+            "error",
+            {
+                "align": "value"
+            }
+        ],
+        "no-multi-spaces": [
+            "error",
+            {
+                "exceptions": {
+                    "VariableDeclarator": true,
+                    "ImportDeclaration": true
+                }
+            }
+        ],
         "no-new": "off",
         "no-param-reassign": "off",
         "linebreak-style": "off",
-        "no-underscore-dangle": ["error", { "enforceInMethodNames": false, "allowAfterThis": true }],
+        "no-underscore-dangle": [
+            "error",
+            {
+                "enforceInMethodNames": false,
+                "allowAfterThis": true
+            }
+        ],
         "padding-line-between-statements": [
             "error",
             {
@@ -69,6 +114,7 @@
                 "next":      "export"
             }
         ],
-        "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }]
+        "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
+        "import/no-extraneous-dependencies": "off"
     }
 }
