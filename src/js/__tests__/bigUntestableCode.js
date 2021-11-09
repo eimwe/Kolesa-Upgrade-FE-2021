@@ -1,16 +1,14 @@
 import { getItemsRequest, toggleFavoriteRequest } from './requests';
+import displayErrorElement from './displayError';
 
 export default () => {
-    document.querySelector('#error').style.display = 'none';
+    displayErrorElement(false);
     document.querySelector('#loader').style.display = 'block';
 
     getItemsRequest()
         .then(({ data }) => {
             if (data.result !== 'ok' || typeof data.html === 'undefined') {
-                const errorElement = document.querySelector('#error');
-
-                errorElement.innerHTML = 'Произошла ошибка, попробуйте ещё раз.';
-                errorElement.style.display = 'block';
+                displayErrorElement(true, 'Произошла ошибка, попробуйте ещё раз.');
             } else {
                 const appElement = document.querySelector('#app');
 
@@ -36,10 +34,7 @@ export default () => {
             }
         })
         .catch((e) => {
-            const errorElement = document.querySelector('#error');
-
-            errorElement.innerHTML = e.message;
-            errorElement.style.display = 'block';
+            displayErrorElement(true, e.message);
         })
         .finally(() => {
             document.querySelector('#loader').style.display = 'none';
